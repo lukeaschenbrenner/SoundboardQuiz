@@ -7,25 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A0ACEF329F19CE7001E5D03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACEF229F19CE7001E5D03 /* AppDelegate.swift */; };
-		2A0ACEF529F19CE7001E5D03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACEF429F19CE7001E5D03 /* SceneDelegate.swift */; };
-		2A0ACEF729F19CE7001E5D03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACEF629F19CE7001E5D03 /* ViewController.swift */; };
-		2A0ACEFA29F19CE7001E5D03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACEF829F19CE7001E5D03 /* Main.storyboard */; };
-		2A0ACEFD29F19CE7001E5D03 /* SoundboardQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACEFB29F19CE7001E5D03 /* SoundboardQuiz.xcdatamodeld */; };
-		2A0ACEFF29F19CF1001E5D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACEFE29F19CF1001E5D03 /* Assets.xcassets */; };
-		2A0ACF0229F19CF1001E5D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0029F19CF1001E5D03 /* LaunchScreen.storyboard */; };
+		2A0ACF1829F1A02F001E5D03 /* LevelSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0929F1A02E001E5D03 /* LevelSelectTableViewController.swift */; };
+		2A0ACF1929F1A02F001E5D03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0A29F1A02E001E5D03 /* AppDelegate.swift */; };
+		2A0ACF1B29F1A02F001E5D03 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0C29F1A02E001E5D03 /* Model.xcdatamodeld */; };
+		2A0ACF1C29F1A02F001E5D03 /* LevelSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0E29F1A02E001E5D03 /* LevelSelectController.swift */; };
+		2A0ACF1D29F1A02F001E5D03 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0F29F1A02E001E5D03 /* Media.xcassets */; };
+		2A0ACF1E29F1A02F001E5D03 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1029F1A02E001E5D03 /* CategoryTableViewCell.swift */; };
+		2A0ACF2029F1A02F001E5D03 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1229F1A02E001E5D03 /* Sounds */; };
+		2A0ACF2129F1A02F001E5D03 /* SoundboardQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1329F1A02F001E5D03 /* SoundboardQuiz.xcdatamodeld */; };
+		2A0ACF2229F1A02F001E5D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1529F1A02F001E5D03 /* Assets.xcassets */; };
+		2A0ACF2329F1A02F001E5D03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1629F1A02F001E5D03 /* SceneDelegate.swift */; };
+		2A0ACF2429F1A02F001E5D03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1729F1A02F001E5D03 /* ViewController.swift */; };
+		2A0ACF2629F1A0F3001E5D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF2529F1A0F3001E5D03 /* LaunchScreen.storyboard */; };
+		2A0ACF2829F1A107001E5D03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF2729F1A107001E5D03 /* Main.storyboard */; };
+		2A0ACF2C29F1A66E001E5D03 /* PreloadedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF2B29F1A66E001E5D03 /* PreloadedData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A0ACEEF29F19CE7001E5D03 /* SoundboardQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundboardQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A0ACEF229F19CE7001E5D03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A0ACEF429F19CE7001E5D03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A0ACEF629F19CE7001E5D03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2A0ACEF929F19CE7001E5D03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A0ACEFC29F19CE7001E5D03 /* SoundboardQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundboardQuiz.xcdatamodel; sourceTree = "<group>"; };
-		2A0ACEFE29F19CF1001E5D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2A0ACF0129F19CF1001E5D03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2A0ACF0329F19CF1001E5D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A0ACF0929F1A02E001E5D03 /* LevelSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelSelectTableViewController.swift; path = SoundboardQuiz/LevelSelectTableViewController.swift; sourceTree = "<group>"; };
+		2A0ACF0A29F1A02E001E5D03 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SoundboardQuiz/AppDelegate.swift; sourceTree = "<group>"; };
+		2A0ACF0B29F1A02E001E5D03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SoundboardQuiz/Info.plist; sourceTree = "<group>"; };
+		2A0ACF0D29F1A02E001E5D03 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2A0ACF0E29F1A02E001E5D03 /* LevelSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelSelectController.swift; path = SoundboardQuiz/LevelSelectController.swift; sourceTree = "<group>"; };
+		2A0ACF0F29F1A02E001E5D03 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = SoundboardQuiz/Media.xcassets; sourceTree = "<group>"; };
+		2A0ACF1029F1A02E001E5D03 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = SoundboardQuiz/CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		2A0ACF1229F1A02E001E5D03 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = SoundboardQuiz/Sounds; sourceTree = "<group>"; };
+		2A0ACF1429F1A02F001E5D03 /* SoundboardQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundboardQuiz.xcdatamodel; sourceTree = "<group>"; };
+		2A0ACF1529F1A02F001E5D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SoundboardQuiz/Assets.xcassets; sourceTree = "<group>"; };
+		2A0ACF1629F1A02F001E5D03 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = SoundboardQuiz/SceneDelegate.swift; sourceTree = "<group>"; };
+		2A0ACF1729F1A02F001E5D03 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SoundboardQuiz/ViewController.swift; sourceTree = "<group>"; };
+		2A0ACF2529F1A0F3001E5D03 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SoundboardQuiz/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A0ACF2729F1A107001E5D03 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = SoundboardQuiz/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A0ACF2B29F1A66E001E5D03 /* PreloadedData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = PreloadedData.plist; path = SoundboardQuiz/PreloadedData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +56,21 @@
 		2A0ACEE629F19CE7001E5D03 = {
 			isa = PBXGroup;
 			children = (
-				2A0ACEF129F19CE7001E5D03 /* SoundboardQuiz */,
+				2A0ACF0A29F1A02E001E5D03 /* AppDelegate.swift */,
+				2A0ACF2A29F1A63C001E5D03 /* Data */,
+				2A0ACF1529F1A02F001E5D03 /* Assets.xcassets */,
+				2A0ACF1029F1A02E001E5D03 /* CategoryTableViewCell.swift */,
+				2A0ACF0B29F1A02E001E5D03 /* Info.plist */,
+				2A0ACF0E29F1A02E001E5D03 /* LevelSelectController.swift */,
+				2A0ACF0929F1A02E001E5D03 /* LevelSelectTableViewController.swift */,
+				2A0ACF0F29F1A02E001E5D03 /* Media.xcassets */,
+				2A0ACF2529F1A0F3001E5D03 /* LaunchScreen.storyboard */,
+				2A0ACF2729F1A107001E5D03 /* Main.storyboard */,
+				2A0ACF0C29F1A02E001E5D03 /* Model.xcdatamodeld */,
+				2A0ACF1629F1A02F001E5D03 /* SceneDelegate.swift */,
+				2A0ACF1329F1A02F001E5D03 /* SoundboardQuiz.xcdatamodeld */,
+				2A0ACF1229F1A02E001E5D03 /* Sounds */,
+				2A0ACF1729F1A02F001E5D03 /* ViewController.swift */,
 				2A0ACEF029F19CE7001E5D03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,19 +83,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A0ACEF129F19CE7001E5D03 /* SoundboardQuiz */ = {
+		2A0ACF2A29F1A63C001E5D03 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2A0ACEF229F19CE7001E5D03 /* AppDelegate.swift */,
-				2A0ACEF429F19CE7001E5D03 /* SceneDelegate.swift */,
-				2A0ACEF629F19CE7001E5D03 /* ViewController.swift */,
-				2A0ACEF829F19CE7001E5D03 /* Main.storyboard */,
-				2A0ACEFE29F19CF1001E5D03 /* Assets.xcassets */,
-				2A0ACF0029F19CF1001E5D03 /* LaunchScreen.storyboard */,
-				2A0ACF0329F19CF1001E5D03 /* Info.plist */,
-				2A0ACEFB29F19CE7001E5D03 /* SoundboardQuiz.xcdatamodeld */,
+				2A0ACF2B29F1A66E001E5D03 /* PreloadedData.plist */,
 			);
-			path = SoundboardQuiz;
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +123,7 @@
 				TargetAttributes = {
 					2A0ACEEE29F19CE7001E5D03 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -128,9 +150,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A0ACF0229F19CF1001E5D03 /* LaunchScreen.storyboard in Resources */,
-				2A0ACEFF29F19CF1001E5D03 /* Assets.xcassets in Resources */,
-				2A0ACEFA29F19CE7001E5D03 /* Main.storyboard in Resources */,
+				2A0ACF1D29F1A02F001E5D03 /* Media.xcassets in Resources */,
+				2A0ACF2029F1A02F001E5D03 /* Sounds in Resources */,
+				2A0ACF2829F1A107001E5D03 /* Main.storyboard in Resources */,
+				2A0ACF2629F1A0F3001E5D03 /* LaunchScreen.storyboard in Resources */,
+				2A0ACF2229F1A02F001E5D03 /* Assets.xcassets in Resources */,
+				2A0ACF2C29F1A66E001E5D03 /* PreloadedData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,33 +166,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A0ACEF729F19CE7001E5D03 /* ViewController.swift in Sources */,
-				2A0ACEFD29F19CE7001E5D03 /* SoundboardQuiz.xcdatamodeld in Sources */,
-				2A0ACEF329F19CE7001E5D03 /* AppDelegate.swift in Sources */,
-				2A0ACEF529F19CE7001E5D03 /* SceneDelegate.swift in Sources */,
+				2A0ACF1E29F1A02F001E5D03 /* CategoryTableViewCell.swift in Sources */,
+				2A0ACF2329F1A02F001E5D03 /* SceneDelegate.swift in Sources */,
+				2A0ACF1929F1A02F001E5D03 /* AppDelegate.swift in Sources */,
+				2A0ACF1829F1A02F001E5D03 /* LevelSelectTableViewController.swift in Sources */,
+				2A0ACF2129F1A02F001E5D03 /* SoundboardQuiz.xcdatamodeld in Sources */,
+				2A0ACF1C29F1A02F001E5D03 /* LevelSelectController.swift in Sources */,
+				2A0ACF2429F1A02F001E5D03 /* ViewController.swift in Sources */,
+				2A0ACF1B29F1A02F001E5D03 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2A0ACEF829F19CE7001E5D03 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A0ACEF929F19CE7001E5D03 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2A0ACF0029F19CF1001E5D03 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A0ACF0129F19CF1001E5D03 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2A0ACF0429F19CF1001E5D03 /* Debug */ = {
@@ -289,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -306,6 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.benedictine.SoundboardQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -316,6 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -362,13 +375,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2A0ACEFB29F19CE7001E5D03 /* SoundboardQuiz.xcdatamodeld */ = {
+		2A0ACF0C29F1A02E001E5D03 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2A0ACEFC29F19CE7001E5D03 /* SoundboardQuiz.xcdatamodel */,
+				2A0ACF0D29F1A02E001E5D03 /* Model.xcdatamodel */,
 			);
-			currentVersion = 2A0ACEFC29F19CE7001E5D03 /* SoundboardQuiz.xcdatamodel */;
-			path = SoundboardQuiz.xcdatamodeld;
+			currentVersion = 2A0ACF0D29F1A02E001E5D03 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = SoundboardQuiz/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		2A0ACF1329F1A02F001E5D03 /* SoundboardQuiz.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2A0ACF1429F1A02F001E5D03 /* SoundboardQuiz.xcdatamodel */,
+			);
+			currentVersion = 2A0ACF1429F1A02F001E5D03 /* SoundboardQuiz.xcdatamodel */;
+			name = SoundboardQuiz.xcdatamodeld;
+			path = SoundboardQuiz/SoundboardQuiz.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
