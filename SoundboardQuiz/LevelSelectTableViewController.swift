@@ -16,9 +16,9 @@ class LevelSelectTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Select a Category"
-        tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "category")
+     //   tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "category")
         configureFetchedResultsController()
-        tableView.dataSource = self
+     //   tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -70,28 +70,23 @@ class LevelSelectTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.RESUSE_IDENTIFIER, for: indexPath) as? CategoryTableViewCell
-//        else {
-//            return UITableViewCell();
-//        }
-//        //let category = categories[indexPath.row]
-//        if let soundCategory = fetchedResultsController?.object(at: indexPath) as? SoundCategory
-//        {
-//            print("NAME OF CATEGORY: \(soundCategory.name!)")
-//            if(cell.categoryLabel == nil){
-//                print("category label is nil")
-//            }
-//            if let categoryLabel = cell.categoryLabel{
-//             categoryLabel.text = soundCategory.name
-//            }
-//            //print(cell.self)
-//            //cell.categoryLabel?.text = category.value(forKeyPath: "name") as? String
-//
-//        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.RESUSE_IDENTIFIER, for: indexPath) as? CategoryTableViewCell
+        else {
+            return UITableViewCell();
+        }
+        //let category = categories[indexPath.row]
+        if let soundCategory = fetchedResultsController?.object(at: indexPath) as? SoundCategory
+        {
+            print("NAME OF CATEGORY: \(soundCategory.name!)")
+            if let categoryLabel = cell.catLabel{
+             categoryLabel.text = soundCategory.name
+            }
+            //print(cell.self)
+            //cell.categoryLabel?.text = category.value(forKeyPath: "name") as? String
+        }
         // Configure the cell...
-        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.RESUSE_IDENTIFIER, for: indexPath) as! CategoryTableViewCell
-        cell.categoryLabel!.text = "Done!"
-        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.RESUSE_IDENTIFIER, for: indexPath) as! CategoryTableViewCell
+//            cell.catLabel.text = "Done!"
         return cell
     }
 
