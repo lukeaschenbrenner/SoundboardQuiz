@@ -8,5 +8,7 @@
 import UIKit
 
 class SoundCollectionViewCell: UICollectionViewCell {
+    public static let REUSE_IDENTIFIER = "soundPanel"
     
+    @IBOutlet var label: UILabel!
 }

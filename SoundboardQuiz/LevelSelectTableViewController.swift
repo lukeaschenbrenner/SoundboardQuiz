@@ -89,7 +89,10 @@ class LevelSelectTableViewController: UITableViewController {
 //            cell.catLabel.text = "Done!"
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showSecondViewController()
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -125,15 +128,34 @@ class LevelSelectTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let destVC = segue.destination as? MainGameViewController {
+            if let senderCell = sender as? CategoryTableViewCell{
+                //if let superView = senderCell.superview as? UITableView{
+                let view = self.view as! UITableView
+                let row = view.indexPath(for: senderCell)?.row
+                
+                destVC.setCategoryInfo(catName: "test", catFilename: "test2")
+                
+                //}
+                
+            }
+        }
     }
-    */
+    
+    @IBAction func showSecondViewController() {
+        print("test")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "MainGameScreen")
+
+        show(secondVC, sender: self)
+    }
 
 }
 extension LevelSelectTableViewController: NSFetchedResultsControllerDelegate{

@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="t26-Si-8kE">
-                                <rect key="frame" x="-4" y="172" width="393" height="641"/>
+                                <rect key="frame" x="-6" y="170" width="393" height="641"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -94,23 +94,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4i-CJ-Ecn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3089" y="58"/>
+            <point key="canvasLocation" x="3060" y="-412"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NavController-->
         <scene sceneID="yv4-vi-Or2">
             <objects>
-                <navigationController id="btb-XP-X9P" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavController" title="NavController" id="btb-XP-X9P" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iHc-0M-t7p"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="gKP-w2-Wwe">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="tXV-QY-UTS" kind="relationship" relationship="rootViewController" id="Nju-A1-2ip"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6j5-Jn-UjV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a1-GH-4HO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3978" y="58"/>
+            <point key="canvasLocation" x="268" y="77"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -121,19 +122,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soundboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbQ-Io-eW9">
-                                <rect key="frame" x="91.666666666666686" y="83" width="210" height="48"/>
+                                <rect key="frame" x="91.666666666666686" y="127" width="210" height="48"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
                                 <color key="textColor" systemColor="tintColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-th-9J6">
-                                <rect key="frame" x="157" y="139" width="79" height="48"/>
+                                <rect key="frame" x="157" y="183" width="79" height="48"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUY-3M-0xL">
-                                <rect key="frame" x="56" y="288.66666666666669" width="280" height="48"/>
+                                <rect key="frame" x="56" y="354.66666666666669" width="280" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="LAm-eY-bzi"/>
                                 </constraints>
@@ -149,7 +150,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2We-Bk-sxh">
-                                <rect key="frame" x="56" y="563.66666666666663" width="280" height="48"/>
+                                <rect key="frame" x="56" y="658.66666666666663" width="280" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="rhm-w8-BaR"/>
                                 </constraints>
@@ -165,7 +166,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMn-IS-d62">
-                                <rect key="frame" x="56" y="411.66666666666669" width="280" height="51.333333333333314"/>
+                                <rect key="frame" x="56" y="490.99999999999994" width="280" height="51.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Fbp-bM-DPN"/>
                                 </constraints>
@@ -199,7 +200,7 @@
                             <constraint firstItem="VUY-3M-0xL" firstAttribute="top" secondItem="aEu-th-9J6" secondAttribute="bottom" multiplier="1.5" constant="8" symbolic="YES" id="yrV-du-WDZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6WE-eI-dkX"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="6WE-eI-dkX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +211,7 @@
             <objects>
                 <tableViewController id="BBh-RV-B99" customClass="LevelSelectTableViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GgN-pR-lFa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -254,108 +255,130 @@
         <!--Second Game View-->
         <scene sceneID="R58-Rc-XKW">
             <objects>
-                <viewController title="Second Game View" id="tXV-QY-UTS" customClass="SecondGameViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainGameScreen" title="Second Game View" id="tXV-QY-UTS" customClass="MainGameViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fbv-Hu-ghm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" id="5o7-7v-bX7">
-                                <rect key="frame" x="16" y="155" width="169" height="590"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89A-kF-OLT">
+                                <rect key="frame" x="16" y="135" width="160" height="596"/>
                                 <connections>
-                                    <segue destination="5Ur-A0-uKC" kind="embed" id="BiL-x4-5Gx"/>
+                                    <segue destination="20M-bQ-Faq" kind="embed" identifier="soundViewSegue" id="Ilg-N5-DnA"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" id="F59-kG-HvR">
-                                <rect key="frame" x="193" y="155" width="169" height="590"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVM-2t-eum">
+                                <rect key="frame" x="211" y="135" width="159" height="596"/>
                                 <connections>
-                                    <segue destination="3z0-Vb-MLo" kind="embed" id="QoB-Ob-ccG"/>
+                                    <segue destination="kJ7-Za-81c" kind="embed" identifier="imageViewSegue" id="Q11-pP-qEz"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="csc-yf-t0A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tVM-2t-eum" firstAttribute="leading" secondItem="89A-kF-OLT" secondAttribute="trailing" constant="34.333333333333343" id="0Gk-Gp-Cry"/>
+                            <constraint firstItem="89A-kF-OLT" firstAttribute="width" secondItem="tVM-2t-eum" secondAttribute="width" constant="1" id="1it-mV-g4q"/>
+                            <constraint firstItem="csc-yf-t0A" firstAttribute="trailing" secondItem="tVM-2t-eum" secondAttribute="trailing" constant="23" id="3v7-su-YDg"/>
+                            <constraint firstItem="csc-yf-t0A" firstAttribute="bottom" secondItem="tVM-2t-eum" secondAttribute="bottom" constant="87" id="FDq-JZ-Feo"/>
+                            <constraint firstItem="89A-kF-OLT" firstAttribute="height" secondItem="tVM-2t-eum" secondAttribute="height" id="MM2-Rb-Hzl"/>
+                            <constraint firstItem="89A-kF-OLT" firstAttribute="leading" secondItem="csc-yf-t0A" secondAttribute="leading" constant="16" id="Vmc-JC-9gT"/>
+                            <constraint firstItem="89A-kF-OLT" firstAttribute="top" secondItem="csc-yf-t0A" secondAttribute="top" constant="76" id="gDH-PA-75i"/>
+                            <constraint firstItem="csc-yf-t0A" firstAttribute="bottom" secondItem="89A-kF-OLT" secondAttribute="bottom" constant="87" id="uT4-Sl-7aE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title of Navigation" id="jdW-xP-Ytc"/>
+                    <connections>
+                        <outlet property="containerView1" destination="89A-kF-OLT" id="6n4-W9-n6e"/>
+                        <outlet property="containerView2" destination="tVM-2t-eum" id="ZJw-jI-V1L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXb-yR-Lvk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <collectionViewFlowLayout automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cUP-J6-kQ2">
-                    <size key="itemSize" width="128" height="128"/>
-                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                </collectionViewFlowLayout>
-                <collectionViewFlowLayout automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7za-yd-nK5">
-                    <size key="itemSize" width="128" height="128"/>
-                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                </collectionViewFlowLayout>
             </objects>
-            <point key="canvasLocation" x="4918" y="58"/>
+            <point key="canvasLocation" x="4915.2671755725187" y="57.74647887323944"/>
         </scene>
-        <!--Sound Collection View Controller-->
-        <scene sceneID="HRs-aD-x1J">
+        <!--Square Collection View Controller-->
+        <scene sceneID="ww2-dg-ROi">
             <objects>
-                <viewController id="5Ur-A0-uKC" customClass="SoundCollectionViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7on-mq-HL5">
-                        <rect key="frame" x="0.0" y="0.0" width="169" height="590"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <collectionViewController id="kJ7-Za-81c" customClass="SquareCollectionViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jOe-fM-V1S" customClass="ImageCollectionView" customModule="SoundboardQuiz" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="159" height="596"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9j9-hb-JfX">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2SH-bc-Smv">
+                            <size key="itemSize" width="111.00000000000001" height="115"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="soundPanel" id="xQi-Fv-otP">
-                                <rect key="frame" x="20.666666666666668" y="0.0" width="128" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagePanel" id="d3w-fs-k4q" customClass="ImageCollectionViewCell" customModule="SoundboardQuiz" customModuleProvider="target">
+                                <rect key="frame" x="24" y="0.0" width="111.00000000000001" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TG1-ID-J0Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jx4-11-57y">
+                                    <rect key="frame" x="0.0" y="0.0" width="111.00000000000001" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <size key="customSize" width="111.00000000000001" height="115"/>
                             </collectionViewCell>
                         </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="kJ7-Za-81c" id="7Ff-g3-Avk"/>
+                            <outlet property="delegate" destination="kJ7-Za-81c" id="rAQ-4y-aBC"/>
+                        </connections>
                     </collectionView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4EV-JP-m0C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="473-qW-fyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5010" y="-557"/>
+            <point key="canvasLocation" x="5501.5267175572517" y="-429.57746478873241"/>
         </scene>
-        <!--Image Collection View Controller-->
-        <scene sceneID="Kv0-Y4-DuM">
+        <!--Square Collection View Controller-->
+        <scene sceneID="Ohd-zN-G3d">
             <objects>
-                <viewController id="3z0-Vb-MLo" customClass="ImageCollectionViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XMt-VN-vIP">
-                        <rect key="frame" x="0.0" y="0.0" width="169" height="590"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <collectionViewController id="20M-bQ-Faq" customClass="SquareCollectionViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="H9J-Zp-WjD" customClass="SoundCollectionView" customModule="SoundboardQuiz" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="596"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0zZ-8H-LrB">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ENa-04-gY6">
+                            <size key="itemSize" width="111" height="115"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagePanel" id="t7d-oq-7eg">
-                                <rect key="frame" x="20.666666666666668" y="0.0" width="128" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="soundPanel" id="ZDC-NG-9HK" customClass="SoundCollectionViewCell" customModule="SoundboardQuiz" customModuleProvider="target">
+                                <rect key="frame" x="24.666666666666668" y="0.0" width="111" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XDG-Wz-1Bp">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZOX-xQ-y3C">
+                                    <rect key="frame" x="0.0" y="0.0" width="111" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-cS-km3">
+                                            <rect key="frame" x="35" y="47" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </collectionViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <size key="customSize" width="111" height="115"/>
+                                <connections>
+                                    <outlet property="label" destination="0MS-cS-km3" id="0c0-Wj-kyX"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="20M-bQ-Faq" id="wRy-TC-739"/>
+                            <outlet property="delegate" destination="20M-bQ-Faq" id="rnS-mC-BfW"/>
+                        </connections>
                     </collectionView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="61a-7l-Ys8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8L-gJ-eJY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4653" y="-547"/>
+            <point key="canvasLocation" x="4548.8549618320612" y="-847.88732394366207"/>
         </scene>
     </scenes>
     <resources>
@@ -367,9 +390,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -8,5 +8,6 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
+    public static let REUSE_IDENTIFIER = "imagePanel";
     
 }

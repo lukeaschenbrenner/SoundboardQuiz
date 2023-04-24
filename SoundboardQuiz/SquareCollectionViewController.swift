@@ -7,13 +7,43 @@
 
 import UIKit
 
-class SecondGameViewController: UIViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
+class SquareCollectionViewController: UICollectionViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate  {
+    //UIViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate, UICollectionViewDataSource, UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 50)
+    }
+    
+    //MARK: - Collection Setup
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if type(of: collectionView) == ImageCollectionViewCell.self {
+            return 4
+        }else{
+            return 5-1//4
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if type(of: collectionView.cellForItem(at: indexPath)) == ImageCollectionViewCell.self{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.REUSE_IDENTIFIER, for: indexPath)
+            return cell
+        }else if type(of: collectionView.cellForItem(at: indexPath)) == SoundCollectionViewCell.self{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SoundCollectionViewCell.REUSE_IDENTIFIER, for: indexPath) as! SoundCollectionViewCell
+            cell.label.text = (self.parent as! MainGameViewController).categoryName
+            
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SoundCollectionViewCell.REUSE_IDENTIFIER, for: indexPath)
+            return cell
+        }
+    }
+    
     
     
     //private var isDragging = false
     
-    @IBOutlet var imagesView: UICollectionView!
-    @IBOutlet var soundsView: UICollectionView!
+//    @IBOutlet var imagesView: UICollectionView!
+//    @IBOutlet var soundsView: UICollectionView!
     //    private let myView: UIView = {
     //        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     //        view.backgroundColor = .link
@@ -22,17 +52,29 @@ class SecondGameViewController: UIViewController, UICollectionViewDragDelegate, 
     //    }()
     
     override func viewDidLoad() {
-        imagesView.dragDelegate = self
-        soundsView.dragDelegate = self
+      //  imagesView.dragDelegate = self
+      //  soundsView.dragDelegate = self
         
-        imagesView.dropDelegate = self
-        soundsView.dropDelegate = self
+      //  imagesView.dropDelegate = self
+       // soundsView.dropDelegate = self
+        self.collectionView.dragDelegate = self
+        self.collectionView.dropDelegate = self
+        self.collectionView.dragInteractionEnabled = true
+        self.collectionView.reorderingCadence = .fast
+       // imagesView.dragInteractionEnabled = true
+        //soundsView.dragInteractionEnabled = true
         
-        imagesView.dragInteractionEnabled = true
-        soundsView.dragInteractionEnabled = true
+      //  imagesView.reorderingCadence = .fast
+      //  soundsView.reorderingCadence = .fast
         
-        imagesView.reorderingCadence = .fast
-        soundsView.reorderingCadence = .fast
+      //  imagesView.dataSource = self
+      //  soundsView.dataSource = self
+        
+       // imagesView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.REUSE_IDENTIFIER)
+        
+      //  soundsView.register(SoundCollectionViewCell.self, forCellWithReuseIdentifier: SoundCollectionViewCell.REUSE_IDENTIFIER)
+        
+        
         
         
         super.viewDidLoad()
