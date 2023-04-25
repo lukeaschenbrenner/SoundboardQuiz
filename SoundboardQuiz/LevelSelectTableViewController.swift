@@ -91,7 +91,7 @@ class LevelSelectTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showSecondViewController()
+        //showSecondViewController()
     }
     /*
     // Override to support conditional editing of the table view.
@@ -139,9 +139,14 @@ class LevelSelectTableViewController: UITableViewController {
             if let senderCell = sender as? CategoryTableViewCell{
                 //if let superView = senderCell.superview as? UITableView{
                 let view = self.view as! UITableView
-                let row = view.indexPath(for: senderCell)?.row
+                let indexPath = view.indexPath(for: senderCell)
                 
-                destVC.setCategoryInfo(catName: "test", catFilename: "test2")
+                if let soundCategory = fetchedResultsController?.object(at: indexPath!) as? SoundCategory
+                {
+                    destVC.setCategoryInfo(catName: soundCategory.name!, sounds: soundCategory.sounds!)
+                    
+                }
+                //MARK: - Setting Category Info For The Main Game View Controller
                 
                 //}
                 
@@ -149,13 +154,12 @@ class LevelSelectTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func showSecondViewController() {
-        print("test")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "MainGameScreen")
-
-        show(secondVC, sender: self)
-    }
+//    @IBAction func showSecondViewController() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let secondVC = storyboard.instantiateViewController(identifier: "MainGameScreen")
+//
+//        show(secondVC, sender: self)
+//    }
 
 }
 extension LevelSelectTableViewController: NSFetchedResultsControllerDelegate{

@@ -17,15 +17,16 @@ class MainGameViewController: UIViewController {
     @IBOutlet var containerView2: UIView!
     
     var categoryName: String?
-    var categoryFilename: String?
-    func setCategoryInfo(catName: String, catFilename: String) -> () {
+    var sounds: Set<Sound>?
+    func setCategoryInfo(catName: String, sounds: NSSet) -> () {
         categoryName = catName
-        categoryFilename = catFilename
+        self.sounds = sounds as? Set<Sound>
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = categoryName
+
 
         // Do any additional setup after loading the view.
     }
@@ -54,4 +55,5 @@ class MainGameViewController: UIViewController {
 //  This is your custom view controller contained in `MainViewController`.
 class CustomViewController: UIViewController {
     func myMethod() {}
+
 }

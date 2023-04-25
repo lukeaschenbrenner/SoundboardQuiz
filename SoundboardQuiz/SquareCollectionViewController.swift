@@ -21,15 +21,32 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             return 5-1//4
         }
     }
+    var sounds: [Sound]?
+    var currentIndex: Int = 0
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if type(of: collectionView.cellForItem(at: indexPath)) == ImageCollectionViewCell.self{
+        if type(of: collectionView) == ImageCollectionView.self{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.REUSE_IDENTIFIER, for: indexPath)
             return cell
-        }else if type(of: collectionView.cellForItem(at: indexPath)) == SoundCollectionViewCell.self{
+        }else if type(of: collectionView) == SoundCollectionView.self{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SoundCollectionViewCell.REUSE_IDENTIFIER, for: indexPath) as! SoundCollectionViewCell
-            cell.label.text = (self.parent as! MainGameViewController).categoryName
+            if(sounds == nil){
+                do{
+                    try sounds = (self.parent as! MainGameViewController).sounds?.sorted(by: {(firstSound, secondSound) throws -> Bool in return firstSound.name ?? "" > secondSound.name ?? ""})
+
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+
+            cell.label.text = sounds?[currentIndex].name ?? "error nil"
+            if(currentIndex >= (sounds!.count - 1)){
+                currentIndex = 0
+            }else{
+                currentIndex = (sounds?.index(after: currentIndex)) ?? 0
+
+            }
             
             return cell
         }else{
@@ -104,12 +121,12 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     
     
     
-    var items: [String] = [String](repeating: "Hello", count: 4)
+    //var items: [String] = [String](repeating: "Hello", count: 4)
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]
     {
-        let theString = items[indexPath.row]
-        let itemProvider = NSItemProvider(object: theString as NSString)
+        let theString = (collectionView.cellForItem(at: indexPath) as! SoundCollectionViewCell).label.text
+        let itemProvider = NSItemProvider(object: theString! as NSString)
         //        let itemProvider = NSItemProvider(item: theString as NSData, typeIdentifier: UTType.plainText.identifier)
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
@@ -167,7 +184,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
                 {
                     //Destination index path for each item is calculated separately using the destinationIndexPath fetched from the coordinator
                     let indexPath = IndexPath(row: destinationIndexPath.row + index, section: destinationIndexPath.section)
-                    items.insert(item.dragItem.localObject as! String, at: indexPath.row)
+              //      items.insert(item.dragItem.localObject as! String, at: indexPath.row)
                     indexPaths.append(indexPath)
                    // coordinator.drop(item, to: <#T##UICollectionViewDropPlaceholder#>)
 

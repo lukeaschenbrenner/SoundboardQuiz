@@ -238,6 +238,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="catLabel" destination="0R6-yq-aBa" id="9DD-Vb-ks5"/>
+                                    <segue destination="tXV-QY-UTS" kind="show" id="j5h-lb-Psq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -261,13 +262,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89A-kF-OLT">
-                                <rect key="frame" x="16" y="135" width="160" height="596"/>
+                                <rect key="frame" x="16" y="179" width="160.33333333333334" height="552"/>
                                 <connections>
                                     <segue destination="20M-bQ-Faq" kind="embed" identifier="soundViewSegue" id="Ilg-N5-DnA"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVM-2t-eum">
-                                <rect key="frame" x="211" y="135" width="159" height="596"/>
+                                <rect key="frame" x="210.66666666666663" y="179" width="159.33333333333337" height="552"/>
                                 <connections>
                                     <segue destination="kJ7-Za-81c" kind="embed" identifier="imageViewSegue" id="Q11-pP-qEz"/>
                                 </connections>
@@ -301,7 +302,7 @@
             <objects>
                 <collectionViewController id="kJ7-Za-81c" customClass="SquareCollectionViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jOe-fM-V1S" customClass="ImageCollectionView" customModule="SoundboardQuiz" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="159" height="596"/>
+                        <rect key="frame" x="0.0" y="0.0" width="159.33333333333337" height="552"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2SH-bc-Smv">
@@ -337,7 +338,7 @@
             <objects>
                 <collectionViewController id="20M-bQ-Faq" customClass="SquareCollectionViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="H9J-Zp-WjD" customClass="SoundCollectionView" customModule="SoundboardQuiz" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="160" height="596"/>
+                        <rect key="frame" x="0.0" y="0.0" width="160.33333333333334" height="552"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ENa-04-gY6">
@@ -354,8 +355,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="111" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-cS-km3">
-                                            <rect key="frame" x="35" y="47" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-cS-km3">
+                                            <rect key="frame" x="7.9999999999998472" y="13" width="95" height="89"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
