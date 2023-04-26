@@ -10,8 +10,8 @@ import UIKit
 class MainGameViewController: UIViewController {
     //    @IBOutlet var titleBar: UINavigationItem!
     
-    private var embeddedViewController1: CustomViewController!
-    private var embeddedViewController2: CustomViewController!
+    private var embeddedViewController1: SquareCollectionViewController!
+    //private var embeddedViewController2: CustomViewController!
 
     @IBOutlet var containerView1: UIView!
     @IBOutlet var containerView2: UIView!
@@ -31,15 +31,18 @@ class MainGameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? CustomViewController,
+        if let vc = segue.destination as? SquareCollectionViewController,
                     segue.identifier == "soundViewSegue" {
             self.embeddedViewController1 = vc
-        }else if let vc = segue.destination as? CustomViewController, segue.identifier == "imageViewSegue" {
-            self.embeddedViewController2 = vc
-        }
+        }//else if let vc = segue.destination as? SquareCollectionViewController, segue.identifier == "imageViewSegue" {
+         //   self.embeddedViewController2 = vc
+        //}
     }
 
-    
+    func stopDragAndGreyOutSoundCell(name: String){
+        let didSucceed = embeddedViewController1.correctCell(name: name)
+        print("did succeed? \(didSucceed)")
+    }
 
     /*
     // MARK: - Navigation
@@ -52,8 +55,9 @@ class MainGameViewController: UIViewController {
     */
 
 }
-//  This is your custom view controller contained in `MainViewController`.
-class CustomViewController: UIViewController {
-    func myMethod() {}
+
+protocol ClickableCell {
+    func correctCell(name: String) -> Bool
+    //DO STUFF HERE TO GREY OUT CELL ETC.
 
 }

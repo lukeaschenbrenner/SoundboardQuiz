@@ -7,7 +7,48 @@
 
 import UIKit
 
-class SquareCollectionViewController: UICollectionViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate  {
+class SquareCollectionViewController: UICollectionViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate, ClickableCell  {
+    
+    func correctCell(name: String) -> Bool {
+        guard let collectionView = collectionView as? SoundCollectionView else{
+            print("correctCell attempted on an ImageView cell!")
+            return false
+        }
+        let cells = collectionView.visibleCells
+
+        for cell in cells{
+            if let cell = cell as? SoundCollectionViewCell{
+                if(cell.name == name){
+                    cell.backgroundColor = UIColor(white: 0.8, alpha: 0.6)
+                    cell.canMove = false
+                    cell.isUserInteractionEnabled = false
+                
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        canMoveItemAt indexPath: IndexPath) -> Bool {
+            print("Checking canMoveItemAt")
+            if collectionView is ImageCollectionView{
+                return false
+            }else if collectionView is SoundCollectionView{ //= collectionView as? SoundCollectionView {
+                if let cell = collectionView.cellForItem(at: indexPath) as? SoundCollectionViewCell{
+                    return cell.canMove
+                }else{
+                    print("ERROR! SoundCollectionView cell is not a SoundCollectionViewCell object")
+                    return true
+                }
+            }else{
+                print("ERROR! Views are neither Sound nor Image collection view.")
+                return false
+            }
+    }
+    
     //UIViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate, UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: 50)
@@ -15,38 +56,49 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     
     //MARK: - Collection Setup
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if type(of: collectionView) == ImageCollectionViewCell.self {
+      //  if type(of: collectionView) == ImageCollectionViewCell.self {
             return 4
-        }else{
-            return 5-1//4
-        }
+      //  }else{
+       //     return 5-1//4
+      //  }
     }
     var sounds: [Sound]?
-    var currentIndex: Int = 0
+    var currentIndex: Int = -1
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if(sounds == nil){
+            do{
+                try sounds = (self.parent as! MainGameViewController).sounds?.sorted(by: {(firstSound, secondSound) throws -> Bool in return firstSound.name ?? "" > secondSound.name ?? ""})
+
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
+        
+        if(currentIndex == -1){
+            currentIndex = 0
+        }
+        else if(currentIndex >= (sounds!.count - 1)){
+            currentIndex = 0
+        }else{
+            currentIndex = (sounds?.index(after: currentIndex)) ?? 0
+
+        }
+    
+        
         if type(of: collectionView) == ImageCollectionView.self{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.REUSE_IDENTIFIER, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.REUSE_IDENTIFIER, for: indexPath) as! ImageCollectionViewCell
+            
+            cell.name = sounds?[currentIndex].name
+            
             return cell
         }else if type(of: collectionView) == SoundCollectionView.self{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SoundCollectionViewCell.REUSE_IDENTIFIER, for: indexPath) as! SoundCollectionViewCell
-            if(sounds == nil){
-                do{
-                    try sounds = (self.parent as! MainGameViewController).sounds?.sorted(by: {(firstSound, secondSound) throws -> Bool in return firstSound.name ?? "" > secondSound.name ?? ""})
 
-                }catch{
-                    print(error.localizedDescription)
-                }
-            }
+            cell.name = sounds?[currentIndex].name
+           // cell.label.text = sounds?[currentIndex].name ?? "error nil"
 
-            cell.label.text = sounds?[currentIndex].name ?? "error nil"
-            if(currentIndex >= (sounds!.count - 1)){
-                currentIndex = 0
-            }else{
-                currentIndex = (sounds?.index(after: currentIndex)) ?? 0
-
-            }
             
             return cell
         }else{
@@ -74,9 +126,14 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
         
       //  imagesView.dropDelegate = self
        // soundsView.dropDelegate = self
-        self.collectionView.dragDelegate = self
+        if(collectionView is SoundCollectionView){
+            print("Sound Collection View found!")
+            self.collectionView.dragDelegate = self
+            self.collectionView.dragInteractionEnabled = true
+        }else{
+            print(type(of: collectionView))
+        }
         self.collectionView.dropDelegate = self
-        self.collectionView.dragInteractionEnabled = true
         self.collectionView.reorderingCadence = .fast
        // imagesView.dragInteractionEnabled = true
         //soundsView.dragInteractionEnabled = true
@@ -144,8 +201,19 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             }
             else
             {
-                // ITEM HAS BEEN DROPPED
-                // TODO: GREY OUT COLLECTION VIEW ITEM HERE
+                // item is about to be dropped
+                if(destinationIndexPath == nil){
+                    return UICollectionViewDropProposal(operation: .forbidden)
+                }
+                if let cell = (collectionView.cellForItem(at: destinationIndexPath!)) as? ImageCollectionViewCell{
+                    if(cell.isMatched){
+                        return UICollectionViewDropProposal(operation: .cancel, intent: .insertIntoDestinationIndexPath)
+                    }else{
+                        print("cell is not matched")
+                    }
+                }else{
+                    print("not an image collection view cell")
+                }
                 return UICollectionViewDropProposal(operation: .copy, intent: .insertIntoDestinationIndexPath)
             }
         }
@@ -182,14 +250,42 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
                 var indexPaths = [IndexPath]()
                 for (index, item) in coordinator.items.enumerated()
                 {
+                    print("item: \(item)")
                     //Destination index path for each item is calculated separately using the destinationIndexPath fetched from the coordinator
                     let indexPath = IndexPath(row: destinationIndexPath.row + index, section: destinationIndexPath.section)
+                    
               //      items.insert(item.dragItem.localObject as! String, at: indexPath.row)
                     indexPaths.append(indexPath)
                    // coordinator.drop(item, to: <#T##UICollectionViewDropPlaceholder#>)
-
+                    if type(of: collectionView) == ImageCollectionView.self{
+                        guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell
+                        else{
+                            print("ERROR")
+                            return;
+                        }
+                        if let name = cell.name{
+                            if(name == item.dragItem.localObject as! String){
+                                //cell.name = "0\(item.dragItem.localObject as? String ?? "err")"
+                                let uialert = UIAlertController(title: "Correct", message: "The item you selected was correct!", preferredStyle: UIAlertController.Style.alert)
+                                   uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                                self.present(uialert, animated: true, completion: nil)
+                                                                
+                                (self.parent as! MainGameViewController).stopDragAndGreyOutSoundCell(name: name)
+                                //TODO:                                 stopAllowDragOfDragItem()
+                                //                                      greyOutDragItemAndTargetCell()
+                                cell.backgroundColor = UIColor(white: 0.8, alpha: 0.8)
+                                cell.isMatched = true
+                            }else{
+                                    let uialert = UIAlertController(title: "Game Over", message: "Sorry, the correct name of the image you selected is \(name)", preferredStyle: UIAlertController.Style.alert)
+                                       uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                                    self.present(uialert, animated: true, completion: nil)
+                                                                    
+                                //TODO: gameOver()
+                            }
+                        }
+                    }
                 }
-                collectionView.insertItems(at: indexPaths)
+         //       collectionView.insertItems(at: indexPaths)
             })
             
             break
@@ -198,11 +294,33 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             return
         }
     }
-    
+   
     func collectionView(_ collectionView: UICollectionView, dragPreviewParametersForItemAt indexPath: IndexPath) -> UIDragPreviewParameters?
     {
         let previewParameters = UIDragPreviewParameters()
-        previewParameters.visiblePath = UIBezierPath(rect: CGRect(x: 25, y: 25, width: 120, height: 120))
+        
+        let bounds = collectionView.layoutAttributesForItem(at: indexPath)?.bounds
+        
+        let cgPath = CGMutablePath()
+        let botLeftPt = CGPoint(x: bounds!.minX, y: bounds!.maxY)
+        let botRightPt = CGPoint(x: bounds!.maxX, y: bounds!.maxY)
+        guard let topLeftPoint = bounds?.origin else {
+            print("Error: you should not see this")
+            return previewParameters
+        }
+        let topRightPoint = CGPoint(x: bounds!.maxX, y: bounds!.minY)
+        cgPath.move(to: botLeftPt)
+        cgPath.addArc(tangent1End: topLeftPoint, tangent2End: topRightPoint, radius: 20)
+        cgPath.addLine(to: topRightPoint)
+        cgPath.addArc(tangent1End: topRightPoint, tangent2End: botRightPt, radius: 20)
+        cgPath.move(to: topRightPoint)
+        cgPath.addArc(tangent1End: botRightPt, tangent2End: botLeftPt, radius: 20)
+        cgPath.addLine(to: botLeftPt)
+        cgPath.addArc(tangent1End: botLeftPt, tangent2End: topLeftPoint, radius: 20)
+
+        let bezierPath = UIBezierPath(cgPath: cgPath)
+        
+        previewParameters.visiblePath = bezierPath //UIBezierPath(rect: CGRect(x: 25, y: 25, width: 120, height: 120))
         return previewParameters
     }
     
