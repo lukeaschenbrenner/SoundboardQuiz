@@ -25,6 +25,16 @@ class ImageCollectionViewCell: UICollectionViewCell {
         }
     }
     
+//    private static var secretCellID: Int = 0
+//    
+//    public var cellID: Int? {
+//        get{
+//            return secretCellID
+//        }set{
+//            secretCellID = newValue
+//        }
+//    }
+    
     private var secretImageFile: UIImage?
     
     public var imageFile: UIImage? {

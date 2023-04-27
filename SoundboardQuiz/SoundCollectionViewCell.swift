@@ -9,6 +9,7 @@ import UIKit
 
 class SoundCollectionViewCell: UICollectionViewCell {
     public static let REUSE_IDENTIFIER = "soundPanel"
+    private static var lastNum = 0
     
     @IBOutlet var label: UILabel!
     
@@ -36,5 +37,15 @@ class SoundCollectionViewCell: UICollectionViewCell {
             secretSoundFile = newValue
         }
     }
+    
+//    public var cellID: Int = {
+//        return lastNum
+//    }()
+    
+    
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//        SoundCollectionViewCell.lastNum = ((SoundCollectionViewCell.lastNum + 1) % Int.max)
+//    }
     
 }

@@ -15,14 +15,14 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             return false
         }
         let cells = collectionView.visibleCells
-
+        
         for cell in cells{
             if let cell = cell as? SoundCollectionViewCell{
                 if(cell.name == name){
                     cell.backgroundColor = UIColor(white: 0.8, alpha: 0.6)
                     cell.canMove = false
                     cell.isUserInteractionEnabled = false
-                
+                    print("corrected the SoundViewCell!")
                     return true
                 }
             }
@@ -30,9 +30,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
         return false
     }
     
-    override func collectionView(
-        _ collectionView: UICollectionView,
-        canMoveItemAt indexPath: IndexPath) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
             print("Checking canMoveItemAt")
             if collectionView is ImageCollectionView{
                 return false
@@ -56,6 +54,23 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     
     //MARK: - Collection Setup
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if(sounds == nil){
+            do{
+                print("setting sounds to subsounds...")
+                //try sounds = (self.parent as! MainGameViewController).subSounds?.sorted(by: {(firstSound, secondSound) throws -> Bool in return firstSound.name ?? "" > secondSound.name ?? ""})
+                print(type(of: self.parent))
+                guard let parentView = (self.parent as? MainGameViewController) else{
+                    print("ERROR: parent view not captured")
+                    return 4
+                }
+                sounds = (parentView.subSounds)?.shuffled() ?? nil
+                
+                //            }catch{
+                //                print(error.localizedDescription)
+                //            }
+            }
+        }
       //  if type(of: collectionView) == ImageCollectionViewCell.self {
             return 4
       //  }else{
@@ -63,40 +78,65 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
       //  }
     }
     var sounds: [Sound]?
-    var currentIndex: Int = -1
+   // var currentIndex: Int = -1
+    //var subSounds: [Sound]?
+    
+    func shuffle(){
+        guard let sounds = ((self.parent as? MainGameViewController)?.subSounds) else {
+            return
+        }
+        self.sounds = sounds
+//        if(collectionView is ImageCollectionView){
+            self.sounds = self.sounds?.shuffled()
+//            print("SHUFFLED!")
+//        }
+        self.collectionView.reloadData()
+    }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if(sounds == nil){
-            do{
-                try sounds = (self.parent as! MainGameViewController).sounds?.sorted(by: {(firstSound, secondSound) throws -> Bool in return firstSound.name ?? "" > secondSound.name ?? ""})
 
-            }catch{
-                print(error.localizedDescription)
-            }
-        }
         
-        if(currentIndex == -1){
-            currentIndex = 0
-        }
-        else if(currentIndex >= (sounds!.count - 1)){
-            currentIndex = 0
-        }else{
-            currentIndex = (sounds?.index(after: currentIndex)) ?? 0
-
-        }
+//        if(currentIndex == -1){
+//            currentIndex = 0
+//        }
+//        else if(currentIndex >= (sounds!.count - 1)){
+//            currentIndex = 0
+//        }else{
+//            currentIndex = (sounds?.index(after: currentIndex)) ?? 0
+//
+//        }
     
         
         if type(of: collectionView) == ImageCollectionView.self{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.REUSE_IDENTIFIER, for: indexPath) as! ImageCollectionViewCell
             
-            cell.name = sounds?[currentIndex].name
+           // cell.name = sounds?[currentIndex].name
+            if let sounds, indexPath.row > sounds.count-1{
+                cell.name = "Out of Data"
+            }else{
+                cell.name = sounds?[indexPath.row].name
+                //cell.imageFile = file
+            }
+            cell.backgroundColor = UIColor.systemRed;
+            cell.isMatched = false
+            
             
             return cell
         }else if type(of: collectionView) == SoundCollectionView.self{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SoundCollectionViewCell.REUSE_IDENTIFIER, for: indexPath) as! SoundCollectionViewCell
 
-            cell.name = sounds?[currentIndex].name
+            if let sounds, indexPath.row > sounds.count-1{
+                cell.name = "Out of Data"
+
+            }else{
+                cell.name = sounds?[indexPath.row].name
+
+            }
+            cell.backgroundColor = UIColor.systemGreen;
+            cell.canMove = true
+            cell.isUserInteractionEnabled = true
+            //cell.soundFile = NEW SOUND FILE HERE
            // cell.label.text = sounds?[currentIndex].name ?? "error nil"
 
             
@@ -119,6 +159,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     //        view.isUserInteractionEnabled = true;
     //        return view
     //    }()
+    
     
     override func viewDidLoad() {
       //  imagesView.dragDelegate = self
@@ -147,11 +188,13 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
        // imagesView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.REUSE_IDENTIFIER)
         
       //  soundsView.register(SoundCollectionViewCell.self, forCellWithReuseIdentifier: SoundCollectionViewCell.REUSE_IDENTIFIER)
-        
+
         
         
         
         super.viewDidLoad()
+        
+
         
         // Do any additional setup after loading the view.
     }
@@ -182,13 +225,20 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]
     {
-        let theString = (collectionView.cellForItem(at: indexPath) as! SoundCollectionViewCell).label.text
-        let itemProvider = NSItemProvider(object: theString! as NSString)
-        //        let itemProvider = NSItemProvider(item: theString as NSData, typeIdentifier: UTType.plainText.identifier)
-        
-        let dragItem = UIDragItem(itemProvider: itemProvider)
-        dragItem.localObject = theString
-        return [dragItem]
+        if let cell = (collectionView.cellForItem(at: indexPath) as? SoundCollectionViewCell), cell.canMove{
+            let theString = cell.label.text
+            let itemProvider = NSItemProvider(object: theString! as NSString)
+            //        let itemProvider = NSItemProvider(item: theString as NSData, typeIdentifier: UTType.plainText.identifier)
+            
+            let dragItem = UIDragItem(itemProvider: itemProvider)
+            dragItem.localObject = theString
+            //dragItem.localObject = CellObject(cellID: cell.cellID, cellName: theString!)
+           // dragItem.setValue(cell.cellID, forKey: "cellID")
+            return [dragItem]
+        }else{
+            return [UIDragItem]()
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal
@@ -208,8 +258,8 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
                 if let cell = (collectionView.cellForItem(at: destinationIndexPath!)) as? ImageCollectionViewCell{
                     if(cell.isMatched){
                         return UICollectionViewDropProposal(operation: .cancel, intent: .insertIntoDestinationIndexPath)
-                    }else{
-                        print("cell is not matched")
+//                    }else{
+//                        print("cell is not matched")
                     }
                 }else{
                     print("not an image collection view cell")

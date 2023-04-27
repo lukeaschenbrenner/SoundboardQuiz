@@ -143,7 +143,9 @@ class LevelSelectTableViewController: UITableViewController {
                 
                 if let soundCategory = fetchedResultsController?.object(at: indexPath!) as? SoundCategory
                 {
+                    print("populating category info and sounds")
                     destVC.setCategoryInfo(catName: soundCategory.name!, sounds: soundCategory.sounds!)
+                    destVC.populateSounds()
                     
                 }
                 //MARK: - Setting Category Info For The Main Game View Controller
