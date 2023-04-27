@@ -10,7 +10,8 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
     public static let REUSE_IDENTIFIER = "imagePanel";
     
-    @IBOutlet var label: UILabel!
+    @IBOutlet private var label: UILabel!
+    @IBOutlet private var image: UIImageView!
     private var secretName: String?
     
     public var isMatched = false
@@ -43,6 +44,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
         }
         set{
             secretImageFile = newValue
+            if(secretImageFile != nil){
+                image.image = secretImageFile!
+            }
+
+
         }
     }
     

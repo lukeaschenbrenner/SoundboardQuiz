@@ -2,59 +2,63 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-    <array>
-        <string>Birds</string>
-        <dict>
-            <key>Swallow</key>
-            <string>swallow.wav</string>
-            <key>Robin</key>
-            <string>robin.wav</string>
-        </dict>
-    </array>
-    <array>
-        <string>Musical Instruments</string>
-        <dict>
-            <key>Trombone</key>
-            <string>trombone.wav</string>
-            <key>Tuba</key>
-            <string>tuba.wav</string>
-        </dict>
-    </array>
-    <array>
-        <string>National Anthems</string>
-        <dict>
-            <key>USA</key>
-            <string>usa.wav</string>
-            <key>Canada</key>
-            <string>canada.wav</string>
-        </dict>
-    </array>
-    <array>
-        <string>Computer Noises</string>
-        <dict>
-            <key>HDD Failure</key>
-            <string>hddfailure.wav</string>
-            <key>Windows 98 Startup</key>
-            <string>windows98start.wav</string>
-        </dict>
-    </array>
-    <array>
-        <string>Random One</string>
-        <dict>
-            <key>RANDOM ONE</key>
-            <string>werwerrwere.wav</string>
-            <key>RANDOM TWO</key>
-            <string>cvxccxvcxv.wav</string>
-        </dict>
-    </array>
-    <array>
-        <string>Random Two</string>
-        <dict>
-            <key>QWERTY</key>
-            <string>uiouiouiouio.wav</string>
-            <key>UIOP</key>
-            <string>223253.wav</string>
-        </dict>
-    </array>
+	<array>
+		<string>Birds</string>
+		<dict>
+			<key>Swallow</key>
+			<string>swallow.wav</string>
+			<key>Robin</key>
+			<string>robin.wav</string>
+		</dict>
+	</array>
+	<array>
+		<string>Musical Instruments</string>
+		<dict>
+			<key>Saxophone</key>
+			<string>saxophone.wav</string>
+			<key>Clarinet</key>
+			<string>clarinet.wav</string>
+			<key>Trombone</key>
+			<string>trombone.wav</string>
+			<key>Tuba</key>
+			<string>tuba.wav</string>
+		</dict>
+	</array>
+	<array>
+		<string>National Anthems</string>
+		<dict>
+			<key>USA</key>
+			<string>usa.wav</string>
+			<key>Canada</key>
+			<string>canada.wav</string>
+		</dict>
+	</array>
+	<array>
+		<string>Computer Noises</string>
+		<dict>
+			<key>HDD Failure</key>
+			<string>hddfailure.wav</string>
+			<key>Windows 98 Startup</key>
+			<string>windows98start.wav</string>
+		</dict>
+	</array>
+	<array>
+		<string>Random One</string>
+		<dict>
+			<key>RANDOM ONE</key>
+			<string>werwerrwere.wav</string>
+			<key>RANDOM TWO</key>
+			<string>cvxccxvcxv.wav</string>
+		</dict>
+	</array>
+	<array>
+		<string>Random Two</string>
+		<dict>
+			<key>QWERTY</key>
+			<string>uiouiouiouio.wav</string>
+			<key>UIOP</key>
+			<string>223253.wav</string>
+		</dict>
+	</array>
 </array>
 </plist>

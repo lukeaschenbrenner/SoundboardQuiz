@@ -12,10 +12,13 @@ class MainGameViewController: UIViewController {
     
     private var embeddedViewController1: SquareCollectionViewController!
     private var embeddedViewController2: SquareCollectionViewController!
+    
+    @IBOutlet var scoreLabel: UILabel!
+
 
     @IBOutlet var containerView1: UIView!
     @IBOutlet var containerView2: UIView!
-    
+    var score = 0
     var categoryName: String?
     var sounds: Set<Sound>?
     var subSounds: [Sound]?
@@ -55,6 +58,7 @@ class MainGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = categoryName
+        scoreLabel.text = "Score: \(score)"
         //do{
             //try subSounds = sounds?.sorted(by: {(firstSound, secondSound) throws -> Bool in return firstSound.name ?? "" > secondSound.name ?? ""})
 
@@ -70,12 +74,19 @@ class MainGameViewController: UIViewController {
             self.embeddedViewController1 = vc
         }else if let vc = segue.destination as? SquareCollectionViewController, segue.identifier == "imageViewSegue" {
             self.embeddedViewController2 = vc
+        }else if let vc = segue.destination as? GameOverViewController{
+            print("NOW ENTERING GAME OVER!")
+            if let categoryName, let sounds{
+                vc.setInfo(categoryName: categoryName, sounds: (sounds as NSSet), score: score)
+            }
         }
     }
 
     @IBOutlet var shuffleView: ShuffleView!
     
     func stopDragAndGreyOutSoundCell(name: String){
+        score = score + 1;
+        scoreLabel.text = "Score: \(score)"
         let didSucceed = embeddedViewController1.correctCell(name: name)
         print("did succeed? \(didSucceed)")
     }

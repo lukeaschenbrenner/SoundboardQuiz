@@ -115,7 +115,17 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             if let sounds, indexPath.row > sounds.count-1{
                 cell.name = "Out of Data"
             }else{
-                cell.name = sounds?[indexPath.row].name
+                if let name = sounds?[indexPath.row].name{
+                    cell.name = name
+                }
+                if let fileName = sounds?[indexPath.row].file{
+                    if let index = fileName.firstIndex(of: ".") {
+                        let before = fileName.prefix(upTo: index)
+                        cell.imageFile =  UIImage(named: String(before))
+                    }
+                }
+
+                
                 //cell.imageFile = file
             }
             cell.backgroundColor = UIColor.systemRed;
@@ -328,8 +338,16 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
                             }else{
                                     let uialert = UIAlertController(title: "Game Over", message: "Sorry, the correct name of the image you selected is \(name)", preferredStyle: UIAlertController.Style.alert)
                                        uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
-                                    self.present(uialert, animated: true, completion: nil)
-                                                                    
+                               //     self.present(uialert, animated: true, completion: nil)
+                                                              
+                             //   if let secondVc = storyboard?.instantiateViewController(withIdentifier: "GameOver") {
+                                  //  DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    print("about to move to game over!")
+                                   // self.navigationController?.pushViewController(secondVc, animated: true)
+                                
+                                (self.parent as! MainGameViewController).performSegue(withIdentifier: "segueGameOver", sender: self)
+                                //    }
+                             //   }
                                 //TODO: gameOver()
                             }
                         }
@@ -374,6 +392,11 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
         return previewParameters
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            print("PREPARE CALLED!!!!!!!!!!")
+    }
+
 }
     // MARK: - Touches
     
@@ -411,4 +434,3 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     //    }
     //}
     
-
