@@ -72,7 +72,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             }
         }
       //  if type(of: collectionView) == ImageCollectionViewCell.self {
-            return 4
+        return sounds?.count ?? 4
       //  }else{
        //     return 5-1//4
       //  }
@@ -90,9 +90,53 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             self.sounds = self.sounds?.shuffled()
 //            print("SHUFFLED!")
 //        }
+    }
+    func reload(){
         self.collectionView.reloadData()
     }
-    
+    func disableUserInteractionAndAnimate(){
+        collectionView.isUserInteractionEnabled = false;
+        reload()
+        //animate
+//        let lastItemIndexPath: IndexPath? = (collectionView.indexPathForItem(at: (collectionView.numberOfItems(inSection: 0)-4) ?? CGPoint())?)
+        let lastItemIndexPath = IndexPath(item: 4, section: 0)
+        
+        print("collectionview size: \(self.collectionView.numberOfItems(inSection: 0))")
+        
+//        self.collectionView.performBatchUpdates({ () -> Void in
+//            let indexSet = IndexSet(0...(collectionView.numberOfSections - 1))
+//            self.collectionView.insertSections(indexSet)
+//            self.collectionView.forFirstBaselineLayout.layer.speed = 0.5
+//        }, completion: { (finished) -> Void in
+//            self.collectionView.forFirstBaselineLayout.layer.speed = 1.0
+//            self.shuffle()
+//            self.reload()
+//            self.collectionView.isUserInteractionEnabled = true
+//        })
+        
+        UIView.animate(withDuration: 5, animations: {
+            //[weak self]
+        
+            if self.collectionView.numberOfItems(inSection: 0) >= 8 { //if the cell exists
+                print("scrolling now!")
+                self.collectionView.alwaysBounceVertical = false
+                self.collectionView.scrollToItem(at: lastItemIndexPath, at: .top, animated: false)
+                self.collectionView.layoutIfNeeded()
+            }else{
+                print("err: not enough items to scroll")
+            }
+        }, completion: {_ in
+            guard let sounds = ((self.parent as? MainGameViewController)?.subSounds) else {
+                return
+            }
+            self.sounds = sounds
+            self.reload()
+            self.collectionView.isUserInteractionEnabled = true
+        })
+         
+
+
+    }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
 
@@ -113,7 +157,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             
            // cell.name = sounds?[currentIndex].name
             if let sounds, indexPath.row > sounds.count-1{
-                cell.name = "Out of Data"
+                cell.name = "SHOULD NEVER SEE!"
             }else{
                 if let name = sounds?[indexPath.row].name{
                     cell.name = name

@@ -45,7 +45,7 @@ class GameOverViewController: UIViewController {
       //TODO: below
           newViewController.setCategoryInfo(catName: categoryName!, sounds: sounds!)
         newViewController.populateSounds()
-        
+        //newViewController.shuffle(itemCount: 4)
 
         
         guard var viewControllers = navigationController?.viewControllers else{

@@ -146,6 +146,7 @@ class LevelSelectTableViewController: UITableViewController {
                     print("populating category info and sounds")
                     destVC.setCategoryInfo(catName: soundCategory.name!, sounds: soundCategory.sounds!)
                     destVC.populateSounds()
+                   // destVC.shuffle(itemCount: 4)
                     
                 }
                 //MARK: - Setting Category Info For The Main Game View Controller

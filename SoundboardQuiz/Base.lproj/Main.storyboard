@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="t26-Si-8kE">
-                                <rect key="frame" x="-7" y="169" width="392" height="641"/>
+                                <rect key="frame" x="-7" y="167" width="392" height="642"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -283,7 +283,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shuffle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NMK-3v-9w8">
-                                        <rect key="frame" x="16" y="10" width="44" height="38"/>
+                                        <rect key="frame" x="16" y="9.6666666666666643" width="44" height="38"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                     </imageView>
                                 </subviews>
@@ -332,7 +332,19 @@
                             <constraint firstItem="CeK-06-gX6" firstAttribute="top" secondItem="tVM-2t-eum" secondAttribute="bottom" constant="30" id="zNx-gS-0Lr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title of Navigation" id="jdW-xP-Ytc"/>
+                    <navigationItem key="navigationItem" title="Title of Navigation" id="jdW-xP-Ytc">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="62R-NF-EZH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="PFY-53-eK4">
+                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Animate"/>
+                                <connections>
+                                    <action selector="doAnimateNewItems:" destination="tXV-QY-UTS" eventType="touchUpInside" id="c6z-5P-EcH"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="containerView1" destination="89A-kF-OLT" id="6n4-W9-n6e"/>
                         <outlet property="containerView2" destination="tVM-2t-eum" id="ZJw-jI-V1L"/>

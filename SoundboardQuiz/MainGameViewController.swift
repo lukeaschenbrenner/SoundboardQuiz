@@ -28,12 +28,16 @@ class MainGameViewController: UIViewController {
         self.sounds = sounds as? Set<Sound>
     }
     
-    func shuffle(){
+    func shuffle(itemCount: Int){
 
         
         if let sub = sounds?.shuffled() {
-            let slice = sub[0..<min(4, sub.endIndex)]
-            subSounds = Array(slice)
+            var slice = Array(sub[0..<min(itemCount, sub.endIndex)])
+            while (slice.count < itemCount) {
+                slice.append(sub.randomElement()!)
+            }
+            print("size of slice: \(slice.count)")
+            subSounds = slice
         }else{
             print("error")
             return
@@ -43,6 +47,28 @@ class MainGameViewController: UIViewController {
         embeddedViewController1.shuffle()
         embeddedViewController2.shuffle()
 
+
+    }
+    @IBAction func doAnimateNewItems(_ sender: Any) {
+        
+        shuffle(itemCount: 8)
+        embeddedViewController1.reload()
+        embeddedViewController2.reload()
+
+        if var subSounds {
+            subSounds = Array(subSounds[4..<min(8, subSounds.endIndex)])
+            //TODO: FIX FILLER FUNCTION
+
+            self.subSounds = subSounds
+            print("subsounds shrunk")
+        }else{
+            print("ERROR: subsounds not shrunk")
+        }
+        // do animate here
+        embeddedViewController1.disableUserInteractionAndAnimate()
+        embeddedViewController2.disableUserInteractionAndAnimate()
+        
+        
     }
     func populateSounds() {
         if let sub = sounds?.shuffled(){
@@ -92,7 +118,14 @@ class MainGameViewController: UIViewController {
     }
     
     @IBAction func shuffleTapped(_ sender: Any) {
-        shuffle()
+        shuffle(itemCount: 4)
+        
+        embeddedViewController1.shuffle()
+        embeddedViewController2.shuffle()
+        
+        embeddedViewController1.reload()
+        embeddedViewController2.reload()
+
     }
     
     /*
