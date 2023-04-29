@@ -29,13 +29,20 @@ class SoundCollectionViewCell: UICollectionViewCell {
     
     private var secretSoundFile: URL?
     
-    public var imageFile: URL? {
+    public var soundFile: URL? {
         get{
             return secretSoundFile
         }
         set{
             secretSoundFile = newValue
         }
+    }
+    override func prepareForReuse() {
+        secretName = nil
+        name = nil
+        soundFile = nil
+        secretSoundFile = nil
+        backgroundColor = .systemGreen
     }
     
 //    public var cellID: Int = {
@@ -47,5 +54,8 @@ class SoundCollectionViewCell: UICollectionViewCell {
 //        super.init(coder: coder)
 //        SoundCollectionViewCell.lastNum = ((SoundCollectionViewCell.lastNum + 1) % Int.max)
 //    }
-    
+   // override func layoutSubviews() {
+   //    super.layoutSubviews()
+   //     contentView.frame = contentView.frame.inset(by:  UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0))
+   //     }
 }

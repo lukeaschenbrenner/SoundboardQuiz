@@ -7,7 +7,31 @@
 
 import UIKit
 
-class SquareCollectionViewController: UICollectionViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate, ClickableCell  {
+class SquareCollectionViewController: UICollectionViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate, UICollectionViewDelegateFlowLayout, ClickableCell  {
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if collectionView is SoundCollectionView{
+//            return CGSize(width: (111), height: (90))//(collectionView.bounds.height + 40.0)
+//        }else
+//        {
+//            return CGSize(width: (111), height: (115))//(collectionView.bounds.height + 40.0)
+//            // return CGSize(width: collectionView.frame.size.width, height: 50)
+//            //return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+//            /*
+//             func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//                 return CGSize(width: collectionView.frame.size.width, height: 50)
+//             }
+//             */
+//        }
+//    }
+//     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        print("HELLO?????")
+//        if collectionView is SoundCollectionView{
+//            return UIEdgeInsets(top: 0, left: 50, bottom: 20, right: 50)
+//        }else{
+//            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        }
+//    }
     
     func correctCell(name: String) -> Bool {
         guard let collectionView = collectionView as? SoundCollectionView else{
@@ -48,9 +72,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     //UIViewController, UICollectionViewDragDelegate, UICollectionViewDropDelegate, UICollectionViewDataSource, UICollectionViewDelegate
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: 50)
-    }
+
     
     //MARK: - Collection Setup
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,7 +86,12 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
                     print("ERROR: parent view not captured")
                     return 4
                 }
-                sounds = (parentView.subSounds)?.shuffled() ?? nil
+             //   parentView.shuffle(itemCount: 4)
+                if collectionView is ImageCollectionView{
+                    sounds = (parentView.subSounds)?.shuffled()
+                }else{
+                    sounds = (parentView.subSounds)
+                }
                 
                 //            }catch{
                 //                print(error.localizedDescription)
@@ -81,22 +108,98 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
    // var currentIndex: Int = -1
     //var subSounds: [Sound]?
     
-    func shuffle(){
-        guard let sounds = ((self.parent as? MainGameViewController)?.subSounds) else {
-            return
-        }
-        self.sounds = sounds
+//    func shuffle(){
+//        guard let sounds = ((self.parent as? MainGameViewController)?.subSounds) else {
+//            return
+//        }
+//        
+//        if(sounds.count > 4){
+//            var lastHalf = sounds[4..<sounds.count]
+//            self.sounds = sounds[0..<4] + lastHalf
+//        }else{
+//            self.sounds = sounds
+//        }
 //        if(collectionView is ImageCollectionView){
-            self.sounds = self.sounds?.shuffled()
 //            print("SHUFFLED!")
 //        }
-    }
+//    }
     func reload(){
         self.collectionView.reloadData()
     }
+    func reloadFromParentController(){
+
+        if collectionView is ImageCollectionView{
+            print("ImageCollectionView 1:")
+        }else{
+            print("SoundCollectionView 1:")
+        }
+        for aSound in self.sounds!{
+
+            print(aSound.name!, terminator: ", ")
+
+        }
+        print()
+        
+        guard let parentSounds = ((self.parent as? MainGameViewController)?.subSounds) else {
+            return
+        }
+        print("Sounds now has \(parentSounds.count) items")
+
+        if(parentSounds.count > self.sounds!.count){
+            if collectionView is ImageCollectionView{
+                var tempSounds = Array<Sound>(parentSounds[min(4, parentSounds.count)..<min(8, parentSounds.count)])
+                tempSounds = tempSounds.shuffled()
+                self.sounds!.append(contentsOf: tempSounds)
+            }else{
+                self.sounds!.append(contentsOf: Array<Sound>(parentSounds[min(4, parentSounds.count)..<min(8, parentSounds.count)]))
+
+            }
+        }else if self.sounds!.count > 4{
+            if collectionView is ImageCollectionView{
+                self.sounds = Array(self.sounds![min(self.sounds!.count, 4)..<min(self.sounds!.count, 8)])
+            }else{
+                self.sounds = parentSounds
+
+            }
+        }else{
+            if collectionView is ImageCollectionView{
+                self.sounds = parentSounds.shuffled()
+            }else{
+                self.sounds = parentSounds
+
+            }
+        }
+        //reload()
+        
+        if collectionView is ImageCollectionView{
+            print("ImageCollectionView 2:")
+            
+        }else{
+            print("SoundCollectionView 2:")
+        }
+        for aSound in self.sounds!{
+
+            print(aSound.name!, terminator: ", ")
+
+        }
+        print()
+    }
     func disableUserInteractionAndAnimate(){
         collectionView.isUserInteractionEnabled = false;
-        reload()
+        self.collectionView.isScrollEnabled = true
+
+        //self.reload()
+        let indexPaths: [IndexPath] = { () -> ([IndexPath]) in
+            // find initial item in section
+            let initialItemIndex = 4
+
+            // iterate all items in section
+            return (initialItemIndex..<8).compactMap { item in
+                return IndexPath(item: item, section: 0)
+            }
+        }() //at some index
+        self.collectionView.insertItems(at: indexPaths)
+       // self.collectionView.reloadData()
         //animate
 //        let lastItemIndexPath: IndexPath? = (collectionView.indexPathForItem(at: (collectionView.numberOfItems(inSection: 0)-4) ?? CGPoint())?)
         let lastItemIndexPath = IndexPath(item: 4, section: 0)
@@ -113,26 +216,50 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
 //            self.reload()
 //            self.collectionView.isUserInteractionEnabled = true
 //        })
-        
-        UIView.animate(withDuration: 5, animations: {
-            //[weak self]
-        
-            if self.collectionView.numberOfItems(inSection: 0) >= 8 { //if the cell exists
-                print("scrolling now!")
-                self.collectionView.alwaysBounceVertical = false
-                self.collectionView.scrollToItem(at: lastItemIndexPath, at: .top, animated: false)
-                self.collectionView.layoutIfNeeded()
-            }else{
-                print("err: not enough items to scroll")
-            }
-        }, completion: {_ in
-            guard let sounds = ((self.parent as? MainGameViewController)?.subSounds) else {
-                return
-            }
-            self.sounds = sounds
-            self.reload()
-            self.collectionView.isUserInteractionEnabled = true
-        })
+        self.collectionView.alwaysBounceVertical = false
+                if self.collectionView.numberOfItems(inSection: 0) >= 8 { //if the cell exists
+                    
+                    let frame = self.collectionView.layoutAttributesForItem(at: lastItemIndexPath)?.frame.origin
+                    print("FRAME:::: \(frame!.y)")
+                    //      self.collectionView.scrollToItem(at: lastItemIndexPath, at: .top, animated: true)
+                    //      UIView.animate(withDuration: 1, animations: { [weak self] in
+                    //          self?.collectionView.layoutIfNeeded()
+                    maxScrollYpoint = frame!.y
+                    autoScroll()
+                
+               // self?.collectionView.setContentOffset(frame!, animated: false)
+                    
+                    /*
+            }, completion: { _ in
+                self.collectionView?.performBatchUpdates({
+                    let indexPaths: [IndexPath] = { () -> ([IndexPath]) in
+                        // find initial item in section
+                        let initialItemIndex = 4
+
+                        // iterate all items in section
+                        return (0..<(initialItemIndex)).compactMap { item in
+                            return IndexPath(item: item, section: 0)
+                        }
+                    }()
+                    print(self.collectionView.numberOfItems(inSection: 0))
+                    self.reloadFromParentController()
+                    self.collectionView.deleteItems(at: indexPaths)
+                    self.reload()
+                }, completion: { finished in
+                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    self.collectionView.isScrollEnabled = false
+                    self.collectionView.isUserInteractionEnabled = true
+
+                })
+            })
+            */
+            
+      //      UIView.animate(withDuration: 5, delay: 0, options: .curveEaseInOut, animations: {
+      //          self.view.layoutIfNeeded()
+      //      }, completion: {_ in
+
+      //      })
+        }
          
 
 
@@ -225,11 +352,15 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             print("Sound Collection View found!")
             self.collectionView.dragDelegate = self
             self.collectionView.dragInteractionEnabled = true
+
         }else{
             print(type(of: collectionView))
         }
         self.collectionView.dropDelegate = self
-        self.collectionView.reorderingCadence = .fast
+        self.collectionView.reorderingCadence = .slow
+        
+        self.collectionView.isScrollEnabled = false
+      //  self.collectionView.delegate = self
        // imagesView.dragInteractionEnabled = true
         //soundsView.dragInteractionEnabled = true
         
@@ -370,15 +501,15 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
                         if let name = cell.name{
                             if(name == item.dragItem.localObject as! String){
                                 //cell.name = "0\(item.dragItem.localObject as? String ?? "err")"
-                                let uialert = UIAlertController(title: "Correct", message: "The item you selected was correct!", preferredStyle: UIAlertController.Style.alert)
-                                   uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
-                                self.present(uialert, animated: true, completion: nil)
-                                                                
+                                //let uialert = UIAlertController(title: "Correct", message: "The item you selected was correct!", preferredStyle: UIAlertController.Style.alert)
+                                 //  uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                                //self.present(uialert, animated: true, completion: nil)
+                                cell.backgroundColor = UIColor(white: 0.8, alpha: 0.8)
+                                cell.isMatched = true
                                 (self.parent as! MainGameViewController).stopDragAndGreyOutSoundCell(name: name)
                                 //TODO:                                 stopAllowDragOfDragItem()
                                 //                                      greyOutDragItemAndTargetCell()
-                                cell.backgroundColor = UIColor(white: 0.8, alpha: 0.8)
-                                cell.isMatched = true
+
                             }else{
                                     let uialert = UIAlertController(title: "Game Over", message: "Sorry, the correct name of the image you selected is \(name)", preferredStyle: UIAlertController.Style.alert)
                                        uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
@@ -439,6 +570,45 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             print("PREPARE CALLED!!!!!!!!!!")
+    }
+    
+    var maxScrollYpoint: CGFloat = 0.0
+    func simpleAnimate(no: CGFloat){
+        UIView.animate(withDuration: 0.01, delay: 0, options: .curveEaseInOut, animations: {//0.001
+            self.collectionView.contentOffset = CGPoint(x: 0, y: no)
+        }, completion: {_ in
+            if(no < (self.maxScrollYpoint)){
+                //print("no: \(no) maxYpt: \(self.maxScrollYpoint)")
+                self.simpleAnimate(no: no + 10)
+            }else{
+                self.collectionView?.performBatchUpdates({
+                    let indexPaths: [IndexPath] = { () -> ([IndexPath]) in
+                        // find initial item in section
+                        let initialItemIndex = 4
+
+                        // iterate all items in section
+                        return (0..<(initialItemIndex)).compactMap { item in
+                            return IndexPath(item: item, section: 0)
+                        }
+                    }()
+                    print(self.collectionView.numberOfItems(inSection: 0))
+                    self.reloadFromParentController()
+                    self.collectionView.deleteItems(at: indexPaths)
+                    self.reload()
+                }, completion: { finished in
+                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    self.collectionView.isScrollEnabled = false
+                    self.collectionView.isUserInteractionEnabled = true
+
+                })
+            }
+        })
+    }
+    func autoScroll () {
+        let co = collectionView.contentOffset.y
+        let no = co + 1
+
+        simpleAnimate(no: no)
     }
 
 }

@@ -44,21 +44,37 @@ class MainGameViewController: UIViewController {
         }
         subSounds = subSounds?.shuffled()
         
-        embeddedViewController1.shuffle()
-        embeddedViewController2.shuffle()
 
 
     }
+    func addSoundItems(_ numItems: Int){
+        
+//        for aSound in subSounds!{
+//            print(aSound.name!, terminator: ", ")
+//        }
+//        print()
+
+        if let sub = sounds?.shuffled() {
+            var slice = Array(sub[0..<min(numItems, sub.endIndex)])
+            while (slice.count < numItems) {
+                slice.append(sub.randomElement()!)
+            }
+            subSounds?.append(contentsOf: Array(slice))
+        }else{
+            print("error")
+            return
+        }
+
+        embeddedViewController1.reloadFromParentController()
+        embeddedViewController2.reloadFromParentController()
+    }
     @IBAction func doAnimateNewItems(_ sender: Any) {
         
-        shuffle(itemCount: 8)
-        embeddedViewController1.reload()
-        embeddedViewController2.reload()
+        //shuffle(itemCount: 8)
+        addSoundItems(4)
 
         if var subSounds {
             subSounds = Array(subSounds[4..<min(8, subSounds.endIndex)])
-            //TODO: FIX FILLER FUNCTION
-
             self.subSounds = subSounds
             print("subsounds shrunk")
         }else{
@@ -67,6 +83,29 @@ class MainGameViewController: UIViewController {
         // do animate here
         embeddedViewController1.disableUserInteractionAndAnimate()
         embeddedViewController2.disableUserInteractionAndAnimate()
+        
+        
+    }
+    
+    func animate() {
+        
+        //shuffle(itemCount: 8)
+        addSoundItems(4)
+
+        if var subSounds {
+            subSounds = Array(subSounds[4..<min(8, subSounds.endIndex)])
+            self.subSounds = subSounds
+            print("subsounds shrunk")
+        }else{
+            print("ERROR: subsounds not shrunk")
+        }
+        // do animate here
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.embeddedViewController1.disableUserInteractionAndAnimate()
+            self.embeddedViewController2.disableUserInteractionAndAnimate()
+            
+        }
+
         
         
     }
@@ -95,6 +134,9 @@ class MainGameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        shuffle(itemCount: 4)
+        
         if let vc = segue.destination as? SquareCollectionViewController,
                     segue.identifier == "soundViewSegue" {
             self.embeddedViewController1 = vc
@@ -115,13 +157,17 @@ class MainGameViewController: UIViewController {
         scoreLabel.text = "Score: \(score)"
         let didSucceed = embeddedViewController1.correctCell(name: name)
         print("did succeed? \(didSucceed)")
+        if(score > 0 && score % 4 == 0){
+            animate()
+            
+        }
     }
     
     @IBAction func shuffleTapped(_ sender: Any) {
         shuffle(itemCount: 4)
         
-        embeddedViewController1.shuffle()
-        embeddedViewController2.shuffle()
+        embeddedViewController1.reloadFromParentController()
+        embeddedViewController2.reloadFromParentController()
         
         embeddedViewController1.reload()
         embeddedViewController2.reload()

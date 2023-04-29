@@ -51,5 +51,12 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
         }
     }
+    override func prepareForReuse() {
+        secretName = nil
+        name = nil
+        imageFile = nil
+        secretImageFile = nil
+        backgroundColor = .systemRed
+    }
     
 }
