@@ -8,12 +8,23 @@
 import UIKit
 
 class SoundCollectionViewCell: UICollectionViewCell {
+    
     public static let REUSE_IDENTIFIER = "soundPanel"
     private static var lastNum = 0
+    
+    @IBOutlet var playButtonImage: UIImageView!
     
     @IBOutlet var label: UILabel!
     
     public var canMove = true
+    public var isPlaying = false
+    
+    private var secretCellPlaysLeft = 3
+    public var cellPlaysLeft: Int {
+        get {
+            return secretCellPlaysLeft
+        }
+    }
     
     private var secretName: String?
     
@@ -27,9 +38,9 @@ class SoundCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private var secretSoundFile: URL?
+    private var secretSoundFile: String?
     
-    public var soundFile: URL? {
+    public var soundFile: String? {
         get{
             return secretSoundFile
         }
@@ -42,7 +53,19 @@ class SoundCollectionViewCell: UICollectionViewCell {
         name = nil
         soundFile = nil
         secretSoundFile = nil
+        secretCellPlaysLeft = 3
+        playButtonImage.image = UIImage(systemName: "play.fill")
+        isPlaying = false
         backgroundColor = .systemGreen
+    }
+    public func decrementPlayCount(){
+        if(secretCellPlaysLeft > 0){
+            secretCellPlaysLeft -= 1
+            if(secretCellPlaysLeft == 0){
+                backgroundColor = .systemGray
+            }
+            //TODO: MAKE A LABEL FOR THIS
+        }
     }
     
 //    public var cellID: Int = {

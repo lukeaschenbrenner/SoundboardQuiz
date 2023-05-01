@@ -312,6 +312,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
 
             }else{
                 cell.name = sounds?[indexPath.row].name
+                cell.soundFile = sounds?[indexPath.row].file
 
             }
             cell.backgroundColor = UIColor.systemGreen;
@@ -352,6 +353,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             print("Sound Collection View found!")
             self.collectionView.dragDelegate = self
             self.collectionView.dragInteractionEnabled = true
+
 
         }else{
             print(type(of: collectionView))
@@ -609,6 +611,46 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
         let no = co + 1
 
         simpleAnimate(no: no)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+             didSelectItemAt indexPath: IndexPath) {
+
+        if let tappedCell = collectionView.cellForItem(at:indexPath) as? SoundCollectionViewCell, let soundFileName = tappedCell.soundFile{
+            print("CELL TAPPED!!!!!")
+            if(!tappedCell.isPlaying){
+                (collectionView as! SoundCollectionView).playSound(for: soundFileName, cell: tappedCell)
+                tappedCell.decrementPlayCount()
+                tappedCell.isPlaying = true
+            }else{
+                tappedCell.isPlaying = false
+                (collectionView as! SoundCollectionView).stopSound(cell: tappedCell)
+            }
+
+            
+        }
+    }
+    func stopSound(forName: String?){
+        let namedCellsPossible = collectionView.visibleCells.filter({(cell: UICollectionViewCell) -> Bool in
+                if let cell = cell as? SoundCollectionViewCell{
+                    if(forName != nil && cell.name == forName){
+                        return true
+                    }
+                }
+                return false
+            })
+        
+        if(namedCellsPossible.count <= 0){
+            print("Error: no playing cell detected for specified name (\(forName ?? "nil")")
+            if let collectionView = collectionView as? SoundCollectionView {
+                collectionView.stopSound(cell: nil)
+            }
+            return
+        }
+        let theCell = namedCellsPossible[0] as! SoundCollectionViewCell
+        if let collectionView = collectionView as? SoundCollectionView {
+            collectionView.stopSound(cell: theCell)
+        }
     }
 
 }

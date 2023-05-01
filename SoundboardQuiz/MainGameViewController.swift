@@ -99,6 +99,7 @@ class MainGameViewController: UIViewController {
         }else{
             print("ERROR: subsounds not shrunk")
         }
+        
         // do animate here
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.embeddedViewController1.disableUserInteractionAndAnimate()
@@ -120,10 +121,16 @@ class MainGameViewController: UIViewController {
             print("ERROR: subsounds not populated")
         }
     }
+    
+    @IBOutlet var numShufflesLeftLabel: UILabel!
+    public var numShufflesLeft = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = categoryName
         scoreLabel.text = "Score: \(score)"
+        numShufflesLeftLabel.text = "(\(numShufflesLeft > 0 ? numShufflesLeft : 0) Left)"
+
         //do{
             //try subSounds = sounds?.sorted(by: {(firstSound, secondSound) throws -> Bool in return firstSound.name ?? "" > secondSound.name ?? ""})
 
@@ -157,6 +164,7 @@ class MainGameViewController: UIViewController {
         scoreLabel.text = "Score: \(score)"
         let didSucceed = embeddedViewController1.correctCell(name: name)
         print("did succeed? \(didSucceed)")
+        embeddedViewController1.stopSound(forName: name)
         if(score > 0 && score % 4 == 0){
             animate()
             
@@ -164,14 +172,25 @@ class MainGameViewController: UIViewController {
     }
     
     @IBAction func shuffleTapped(_ sender: Any) {
-        shuffle(itemCount: 4)
         
-        embeddedViewController1.reloadFromParentController()
-        embeddedViewController2.reloadFromParentController()
-        
-        embeddedViewController1.reload()
-        embeddedViewController2.reload()
+        if(numShufflesLeft > 0){
+            embeddedViewController1.stopSound(forName: nil)
 
+            shuffle(itemCount: 4)
+            numShufflesLeft -= 1
+            
+            embeddedViewController1.reloadFromParentController()
+            embeddedViewController2.reloadFromParentController()
+            
+            embeddedViewController1.reload()
+            embeddedViewController2.reload()
+            
+            numShufflesLeftLabel.text = "(\(numShufflesLeft > 0 ? numShufflesLeft : 0) Left)"
+        }
+        if(numShufflesLeft == 0){
+            numShufflesLeft -= 1
+            shuffleView.backgroundColor = UIColor.systemGray
+        }
     }
     
     /*

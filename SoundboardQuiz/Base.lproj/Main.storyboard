@@ -40,15 +40,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="t26-Si-8kE">
-                                <rect key="frame" x="-7" y="167" width="392" height="642"/>
+                                <rect key="frame" x="-7" y="167" width="391" height="641"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="N0p-1K-NE1" customClass="CategoryCellTableViewCell" customModule="SoundboardQuiz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="392" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="391" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N0p-1K-NE1" id="Y9C-qI-fgd">
-                                            <rect key="frame" x="0.0" y="0.0" width="392" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="391" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NR-GS-yw4">
@@ -276,27 +276,34 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeK-06-gX6" customClass="ShuffleView" customModule="SoundboardQuiz" customModuleProvider="target">
                                 <rect key="frame" x="77" y="761" width="238" height="57"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shuffle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dg5-ny-NNJ">
-                                        <rect key="frame" x="98" y="18" width="55" height="21"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shuffle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NMK-3v-9w8">
+                                        <rect key="frame" x="16" y="10" width="39" height="38"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(X Left)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld5-fW-OxI">
+                                        <rect key="frame" x="132" y="18" width="58" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shuffle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NMK-3v-9w8">
-                                        <rect key="frame" x="16" y="9.6666666666666643" width="44" height="38"/>
-                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shuffle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dg5-ny-NNJ">
+                                        <rect key="frame" x="69.333333333333343" y="18" width="55" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="dg5-ny-NNJ" firstAttribute="leading" secondItem="CeK-06-gX6" secondAttribute="leading" constant="98" id="OvE-Oz-p4x"/>
+                                    <constraint firstItem="Ld5-fW-OxI" firstAttribute="top" secondItem="CeK-06-gX6" secondAttribute="top" constant="18" id="4I3-aX-Jte"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ld5-fW-OxI" secondAttribute="bottom" constant="18" id="6tM-6n-dQa"/>
+                                    <constraint firstItem="dg5-ny-NNJ" firstAttribute="leading" secondItem="NMK-3v-9w8" secondAttribute="trailing" constant="30" id="Dqn-5x-AUN"/>
                                     <constraint firstAttribute="bottom" secondItem="NMK-3v-9w8" secondAttribute="bottom" constant="8" id="Pkf-Fp-Hdz"/>
                                     <constraint firstItem="dg5-ny-NNJ" firstAttribute="centerY" secondItem="CeK-06-gX6" secondAttribute="centerY" id="WIc-37-bdk"/>
-                                    <constraint firstItem="dg5-ny-NNJ" firstAttribute="leading" secondItem="NMK-3v-9w8" secondAttribute="trailing" constant="38" id="eEy-hs-eiO"/>
                                     <constraint firstItem="NMK-3v-9w8" firstAttribute="top" secondItem="CeK-06-gX6" secondAttribute="top" constant="8" id="kfh-me-4x2"/>
+                                    <constraint firstItem="Ld5-fW-OxI" firstAttribute="leading" secondItem="dg5-ny-NNJ" secondAttribute="trailing" constant="7.6666666666666572" id="uq8-2b-yAT"/>
                                     <constraint firstItem="NMK-3v-9w8" firstAttribute="leading" secondItem="CeK-06-gX6" secondAttribute="leading" constant="16" id="vMY-ar-HYc"/>
-                                    <constraint firstAttribute="trailing" secondItem="dg5-ny-NNJ" secondAttribute="trailing" constant="85" id="xZw-pl-Q9N"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="u1t-e4-zR7" appends="YES" id="o1A-17-X4J"/>
@@ -348,6 +355,7 @@
                     <connections>
                         <outlet property="containerView1" destination="89A-kF-OLT" id="6n4-W9-n6e"/>
                         <outlet property="containerView2" destination="tVM-2t-eum" id="ZJw-jI-V1L"/>
+                        <outlet property="numShufflesLeftLabel" destination="Ld5-fW-OxI" id="v9M-DG-Lzl"/>
                         <outlet property="scoreLabel" destination="yp5-VI-CkV" id="ArL-mB-KJt"/>
                         <outlet property="shuffleView" destination="CeK-06-gX6" id="5Lg-bP-05Q"/>
                         <segue destination="5mH-T7-Cgi" kind="show" identifier="segueGameOver" id="PbQ-UP-vcv"/>
@@ -488,7 +496,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="0.0" id="ENa-04-gY6">
-                            <size key="itemSize" width="111" height="115"/>
+                            <size key="itemSize" width="90" height="90"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="50" height="200"/>
                             <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -523,6 +531,7 @@
                                 <size key="customSize" width="111" height="115"/>
                                 <connections>
                                     <outlet property="label" destination="0MS-cS-km3" id="0c0-Wj-kyX"/>
+                                    <outlet property="playButtonImage" destination="XBE-pD-YWX" id="Lag-ka-Btu"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
