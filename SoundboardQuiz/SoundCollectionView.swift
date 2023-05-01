@@ -35,6 +35,9 @@ class SoundCollectionView: UICollectionView, AVAudioPlayerDelegate {
     
     func playSound(for name: String, cell: SoundCollectionViewCell) {
         mostRecentCell = cell
+        if(cell.cellPlaysLeft <= 0){
+            return
+        }
         guard let path = Bundle.main.path(forResource: name, ofType: nil) else {
             print("Invalid sound path, cannot create sound. Name: \(name)")
             return }

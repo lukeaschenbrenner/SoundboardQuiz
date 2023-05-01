@@ -24,6 +24,7 @@ class GameOverViewController: UIViewController {
         navigationItem.hidesBackButton = true
         if let score {
             scoreLabel.text = "Score: \(score)"
+            //TODO: ADD SCORE TO HIGH SCORES LIST
         }else{
             print("ERROR")
         }
@@ -42,14 +43,13 @@ class GameOverViewController: UIViewController {
         })
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let newViewController = storyboard.instantiateViewController(identifier: "MainGameScreen") as! MainGameViewController
-      //TODO: below
-          newViewController.setCategoryInfo(catName: categoryName!, sounds: sounds!)
+        newViewController.setCategoryInfo(catName: categoryName!, sounds: sounds!)
         newViewController.populateSounds()
         //newViewController.shuffle(itemCount: 4)
 
         
         guard var viewControllers = navigationController?.viewControllers else{
-            print("UH OH!")
+            print("Unable to find navigation controller! Check storyboard")
             return
         }
         viewControllers[(viewControllers.count) - 1] = newViewController

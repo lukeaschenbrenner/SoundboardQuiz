@@ -23,6 +23,9 @@ class SoundCollectionViewCell: UICollectionViewCell {
     public var cellPlaysLeft: Int {
         get {
             return secretCellPlaysLeft
+        } set {
+            secretCellPlaysLeft = newValue
+            label.text = "\(secretCellPlaysLeft)"
         }
     }
     
@@ -34,7 +37,7 @@ class SoundCollectionViewCell: UICollectionViewCell {
         }
         set{
             secretName = newValue
-            label.text = secretName
+            //label.text = secretName
         }
     }
     
@@ -64,9 +67,10 @@ class SoundCollectionViewCell: UICollectionViewCell {
             if(secretCellPlaysLeft == 0){
                 backgroundColor = .systemGray
             }
-            //TODO: MAKE A LABEL FOR THIS
+            label.text = "\(secretCellPlaysLeft)"
         }
     }
+
     
 //    public var cellID: Int = {
 //        return lastNum

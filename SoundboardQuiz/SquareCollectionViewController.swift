@@ -318,6 +318,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
             cell.backgroundColor = UIColor.systemGreen;
             cell.canMove = true
             cell.isUserInteractionEnabled = true
+            cell.cellPlaysLeft = 3
             //cell.soundFile = NEW SOUND FILE HERE
            // cell.label.text = sounds?[currentIndex].name ?? "error nil"
 
@@ -413,7 +414,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]
     {
         if let cell = (collectionView.cellForItem(at: indexPath) as? SoundCollectionViewCell), cell.canMove{
-            let theString = cell.label.text
+            let theString = cell.name
             let itemProvider = NSItemProvider(object: theString! as NSString)
             //        let itemProvider = NSItemProvider(item: theString as NSData, typeIdentifier: UTType.plainText.identifier)
             

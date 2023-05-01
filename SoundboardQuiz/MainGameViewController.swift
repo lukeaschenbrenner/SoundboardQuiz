@@ -68,24 +68,24 @@ class MainGameViewController: UIViewController {
         embeddedViewController1.reloadFromParentController()
         embeddedViewController2.reloadFromParentController()
     }
-    @IBAction func doAnimateNewItems(_ sender: Any) {
-        
-        //shuffle(itemCount: 8)
-        addSoundItems(4)
-
-        if var subSounds {
-            subSounds = Array(subSounds[4..<min(8, subSounds.endIndex)])
-            self.subSounds = subSounds
-            print("subsounds shrunk")
-        }else{
-            print("ERROR: subsounds not shrunk")
-        }
-        // do animate here
-        embeddedViewController1.disableUserInteractionAndAnimate()
-        embeddedViewController2.disableUserInteractionAndAnimate()
-        
-        
-    }
+//    @IBAction func doAnimateNewItems(_ sender: Any) {
+//
+//        //shuffle(itemCount: 8)
+//        addSoundItems(4)
+//
+//        if var subSounds {
+//            subSounds = Array(subSounds[4..<min(8, subSounds.endIndex)])
+//            self.subSounds = subSounds
+//            print("subsounds shrunk")
+//        }else{
+//            print("ERROR: subsounds not shrunk")
+//        }
+//        // do animate here
+//        embeddedViewController1.disableUserInteractionAndAnimate()
+//        embeddedViewController2.disableUserInteractionAndAnimate()
+//
+//
+//    }
     
     func animate() {
         
