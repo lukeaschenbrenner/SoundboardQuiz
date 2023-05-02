@@ -9,6 +9,16 @@ import UIKit
 
 class ShuffleView: UIView {
 
+
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.accessibilityTraits = UIAccessibilityTraits.button
+
+        //TODO: Add voiceover support for shuffle button number of shuffles left and fix green sound buttons to read out the number of plays left from their accessible sub-labels
+        // TODO: Announce to accessibility users before the sound starts playing that there are X plays left (even if there are 0!)
+        
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

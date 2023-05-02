@@ -34,6 +34,14 @@ class SoundCollectionView: UICollectionView, AVAudioPlayerDelegate {
     }
     
     func playSound(for name: String, cell: SoundCollectionViewCell) {
+        if let mostRecentCell {
+            if(mostRecentCell.isPlaying){
+                mostRecentCell.isPlaying = false
+                stopSound(cell: mostRecentCell)
+            }
+            mostRecentCell.playButtonImage.image = UIImage(systemName: "play.fill")
+
+        }
         mostRecentCell = cell
         if(cell.cellPlaysLeft <= 0){
             return
@@ -44,10 +52,10 @@ class SoundCollectionView: UICollectionView, AVAudioPlayerDelegate {
         let url = URL(fileURLWithPath: path)
 
         do {
+            cell.playButtonImage.image = UIImage(systemName: "stop.fill")
             player = try AVAudioPlayer(contentsOf: url)
             player?.delegate = self
             player?.play()
-            cell.playButtonImage.image = UIImage(systemName: "stop.fill")
             
         } catch let error {
             print(error.localizedDescription)
@@ -61,6 +69,7 @@ extension SoundCollectionView{
         successfully flag: Bool
     ){
         mostRecentCell?.playButtonImage.image = UIImage(systemName: "play.fill")
+        mostRecentCell?.isPlaying = false
 
     }
 }

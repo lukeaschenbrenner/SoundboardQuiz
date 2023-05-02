@@ -75,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let preloadedDataKey = "didPreloadData"
         let userDefaults = UserDefaults.standard
         if(userDefaults.bool(forKey: preloadedDataKey) == false || manualLoadDataFromPlist){
-            //TODO: Remove "true" when database has been finalized
             
             userDefaults.set(true, forKey: preloadedDataKey)
             guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "plist")

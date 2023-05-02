@@ -87,6 +87,7 @@ class LevelSelectTableViewController: UITableViewController {
         // Configure the cell...
 //        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.RESUSE_IDENTIFIER, for: indexPath) as! CategoryTableViewCell
 //            cell.catLabel.text = "Done!"
+        cell.accessibilityTraits = UIAccessibilityTraits.button
         return cell
     }
     

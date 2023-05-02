@@ -510,7 +510,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
                                 cell.backgroundColor = UIColor(white: 0.8, alpha: 0.8)
                                 cell.isMatched = true
                                 (self.parent as! MainGameViewController).stopDragAndGreyOutSoundCell(name: name)
-                                //TODO:                                 stopAllowDragOfDragItem()
+                                //or:                                   stopAllowDragOfDragItem()
                                 //                                      greyOutDragItemAndTargetCell()
 
                             }else{
@@ -526,7 +526,6 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
                                 (self.parent as! MainGameViewController).performSegue(withIdentifier: "segueGameOver", sender: self)
                                 //    }
                              //   }
-                                //TODO: gameOver()
                             }
                         }
                     }
@@ -620,9 +619,9 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
         if let tappedCell = collectionView.cellForItem(at:indexPath) as? SoundCollectionViewCell, let soundFileName = tappedCell.soundFile{
             print("CELL TAPPED!!!!!")
             if(!tappedCell.isPlaying){
+                tappedCell.isPlaying = true
                 (collectionView as! SoundCollectionView).playSound(for: soundFileName, cell: tappedCell)
                 tappedCell.decrementPlayCount()
-                tappedCell.isPlaying = true
             }else{
                 tappedCell.isPlaying = false
                 (collectionView as! SoundCollectionView).stopSound(cell: tappedCell)

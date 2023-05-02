@@ -21,6 +21,7 @@
 		2A0ACF2C29F1A66E001E5D03 /* PreloadedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF2B29F1A66E001E5D03 /* PreloadedData.plist */; };
 		2A2B750D29F2E38D0089DE69 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B750C29F2E38D0089DE69 /* GameViewController.swift */; };
 		2A2B750F29F2F0130089DE69 /* SquareCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B750E29F2F0130089DE69 /* SquareCollectionViewController.swift */; };
+		2A7AF47A2A015F8500AF3E7B /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF4792A015F8500AF3E7B /* HighScoresViewController.swift */; };
 		2A9093D129F71DD3002DBA4F /* BoxContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9093D029F71DD3002DBA4F /* BoxContainerView.swift */; };
 		2A9093D329F72D3D002DBA4F /* ImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9093D229F72D3D002DBA4F /* ImageCollectionView.swift */; };
 		2A9093D529F72D49002DBA4F /* SoundCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9093D429F72D49002DBA4F /* SoundCollectionView.swift */; };
@@ -65,6 +66,7 @@
 		2A0ACF2B29F1A66E001E5D03 /* PreloadedData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = PreloadedData.plist; path = SoundboardQuiz/PreloadedData.plist; sourceTree = "<group>"; };
 		2A2B750C29F2E38D0089DE69 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = SoundboardQuiz/GameViewController.swift; sourceTree = "<group>"; };
 		2A2B750E29F2F0130089DE69 /* SquareCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SquareCollectionViewController.swift; path = SoundboardQuiz/SquareCollectionViewController.swift; sourceTree = "<group>"; };
+		2A7AF4792A015F8500AF3E7B /* HighScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HighScoresViewController.swift; path = SoundboardQuiz/HighScoresViewController.swift; sourceTree = "<group>"; };
 		2A9093D029F71DD3002DBA4F /* BoxContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoxContainerView.swift; path = SoundboardQuiz/BoxContainerView.swift; sourceTree = "<group>"; };
 		2A9093D229F72D3D002DBA4F /* ImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCollectionView.swift; path = SoundboardQuiz/ImageCollectionView.swift; sourceTree = "<group>"; };
 		2A9093D429F72D49002DBA4F /* SoundCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundCollectionView.swift; path = SoundboardQuiz/SoundCollectionView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				2A0ACF0929F1A02E001E5D03 /* LevelSelectTableViewController.swift */,
 				2A0ACF2529F1A0F3001E5D03 /* LaunchScreen.storyboard */,
 				2A0ACF2729F1A107001E5D03 /* Main.storyboard */,
+				2A7AF4792A015F8500AF3E7B /* HighScoresViewController.swift */,
 				2AC744AB29FB1CF5006E0CD7 /* GameOverViewController.swift */,
 				2AFCB22D29FAD2B5003BD84E /* ShuffleView.swift */,
 				2A9093D629F73564002DBA4F /* MainGameViewController.swift */,
@@ -271,6 +274,7 @@
 				2A9093D129F71DD3002DBA4F /* BoxContainerView.swift in Sources */,
 				2A9093D529F72D49002DBA4F /* SoundCollectionView.swift in Sources */,
 				2A9093D329F72D3D002DBA4F /* ImageCollectionView.swift in Sources */,
+				2A7AF47A2A015F8500AF3E7B /* HighScoresViewController.swift in Sources */,
 				2A0ACF1929F1A02F001E5D03 /* AppDelegate.swift in Sources */,
 				2A0ACF1829F1A02F001E5D03 /* LevelSelectTableViewController.swift in Sources */,
 				2AC1DDC129F6D292001253C3 /* SoundCollectionViewCell.swift in Sources */,

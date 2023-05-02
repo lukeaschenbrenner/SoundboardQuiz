@@ -10,7 +10,7 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
     public static let REUSE_IDENTIFIER = "imagePanel";
     
-    @IBOutlet private var label: UILabel!
+   // @IBOutlet private var label: UILabel!
     @IBOutlet private var image: UIImageView!
     private var secretName: String?
     
@@ -22,7 +22,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
         }
         set{
             secretName = newValue
-            label.text = secretName
+          //  label.text = secretName
+            image.accessibilityLabel = secretName
+            image.accessibilityValue = "image"
+
         }
     }
     
@@ -57,6 +60,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageFile = nil
         secretImageFile = nil
         backgroundColor = .systemRed
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder:aDecoder)
     }
     
 }

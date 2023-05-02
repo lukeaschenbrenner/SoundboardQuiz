@@ -69,6 +69,10 @@ class SoundCollectionViewCell: UICollectionViewCell {
             }
             label.text = "\(secretCellPlaysLeft)"
         }
+        // TODO: add voiceover to say exactly how many left
+        UIAccessibility.post(notification: .announcement, argument: "You have \(secretCellPlaysLeft) plays left for this sound box.")
+
+
     }
 
     
@@ -77,9 +81,15 @@ class SoundCollectionViewCell: UICollectionViewCell {
 //    }()
     
     
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//        SoundCollectionViewCell.lastNum = ((SoundCollectionViewCell.lastNum + 1) % Int.max)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .none
+        self.accessibilityLabel = "Sound Box"
+        self.accessibilityValue = "label.accessibilityActivate()"
+
+    }
+        //        SoundCollectionViewCell.lastNum = ((SoundCollectionViewCell.lastNum + 1) % Int.max)
 //    }
    // override func layoutSubviews() {
    //    super.layoutSubviews()
