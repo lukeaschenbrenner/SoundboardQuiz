@@ -28,6 +28,7 @@ class GameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        UserDefaults.standard.removeObject(forKey: "lastState")
         if let score, let categoryName {
             scoreLabel.text = "Score: \(score)"
             let defaults = UserDefaults.standard

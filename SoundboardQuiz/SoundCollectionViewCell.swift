@@ -69,7 +69,6 @@ class SoundCollectionViewCell: UICollectionViewCell {
             }
             label.text = "\(secretCellPlaysLeft)"
         }
-        // TODO: add voiceover to say exactly how many left
         UIAccessibility.post(notification: .announcement, argument: "You have \(secretCellPlaysLeft) plays left for this sound box.")
 
 
@@ -86,7 +85,7 @@ class SoundCollectionViewCell: UICollectionViewCell {
         self.isAccessibilityElement = true
         self.accessibilityTraits = .none
         self.accessibilityLabel = "Sound Box"
-        self.accessibilityValue = "label.accessibilityActivate()"
+        self.accessibilityValue = "\(cellPlaysLeft) Plays Remaining."
 
     }
         //        SoundCollectionViewCell.lastNum = ((SoundCollectionViewCell.lastNum + 1) % Int.max)

@@ -41,15 +41,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="t26-Si-8kE">
-                                <rect key="frame" x="-11" y="164" width="393" height="641"/>
+                                <rect key="frame" x="-12" y="163" width="394" height="641"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="N0p-1K-NE1" customClass="CategoryCellTableViewCell" customModule="SoundboardQuiz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="394" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N0p-1K-NE1" id="Y9C-qI-fgd">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NR-GS-yw4">
@@ -120,13 +120,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUY-3M-0xL">
-                                <rect key="frame" x="56" y="354.66666666666669" width="280" height="95.666666666666686"/>
+                                <rect key="frame" x="56" y="354.66666666666669" width="280" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="LAm-eY-bzi"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Resume (TODO)" cornerStyle="dynamic">
+                                <buttonConfiguration key="configuration" style="filled" title="Resume" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background" cornerRadius="13" imageContentMode="left">
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <imageReference key="image" image="arrow.forward" catalog="system" symbolScale="large" renderingMode="original" variableValue="1"/>
@@ -134,9 +134,12 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="30" bottom="0.0" trailing="10"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="tXV-QY-UTS" kind="show" identifier="directGameViewSegue" id="WQn-BQ-bGV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2We-Bk-sxh">
-                                <rect key="frame" x="56" y="727.33333333333337" width="280" height="48"/>
+                                <rect key="frame" x="56" y="658.66666666666663" width="280" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="rhm-w8-BaR"/>
                                 </constraints>
@@ -157,7 +160,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMn-IS-d62">
-                                <rect key="frame" x="56" y="548.33333333333337" width="280" height="51.333333333333371"/>
+                                <rect key="frame" x="56" y="490.99999999999994" width="280" height="51.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Fbp-bM-DPN"/>
                                 </constraints>
@@ -238,11 +241,13 @@
                             <outlet property="delegate" destination="BBh-RV-B99" id="uPL-6W-6Ob"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Vzd-VX-nCI"/>
+                    <navigationItem key="navigationItem" id="Vzd-VX-nCI">
+                        <barButtonItem key="backBarButtonItem" title="Exit" id="fs4-fn-5YZ"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2l-7l-fcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2061.8320610687024" y="29.577464788732396"/>
+            <point key="canvasLocation" x="2905" y="-347"/>
         </scene>
         <!--High Scores View Controller-->
         <scene sceneID="co0-ym-JTk">
@@ -636,6 +641,9 @@
             <point key="canvasLocation" x="4737" y="-487"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WQn-BQ-bGV"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.forward" catalog="system" width="128" height="95"/>
         <image name="play.fill" catalog="system" width="117" height="128"/>

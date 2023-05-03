@@ -20,6 +20,7 @@ class HighScoresViewController: UIViewController {
     override func viewDidLoad() {
         scoreArray = [score1, score2, score3, score4, score5]
         super.viewDidLoad()
+        print("Entered High Scores View Controller")
       //  let defaults = UserDefaults.standard
         //let highScoresArr: Array<(String, Int)>? = defaults.array(forKey: "highScores") as? Array<(String, Int)>
         let fetchedData = UserDefaults.standard.data(forKey: "highScores")!

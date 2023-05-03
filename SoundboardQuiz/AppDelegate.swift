@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    public lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -160,6 +160,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+//    func applicationDidEnterBackground(_ application: UIApplication) {
+//        
+//    }
+    func applicationWillTerminate(_ application: UIApplication) {
+        do{
+            try MainGameViewController.attemptSaveState()
+        } catch{
+            print(error.localizedDescription)
+            // We are not currently in the middle of a game, so we can safely exit
+            UserDefaults.standard.removeObject(forKey: "lastState")
+        }
+        
     }
 
 

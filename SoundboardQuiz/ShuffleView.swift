@@ -14,10 +14,19 @@ class ShuffleView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.accessibilityTraits = UIAccessibilityTraits.button
-
-        //TODO: Add voiceover support for shuffle button number of shuffles left and fix green sound buttons to read out the number of plays left from their accessible sub-labels
-        // TODO: Announce to accessibility users before the sound starts playing that there are X plays left (even if there are 0!)
-        
+        self.accessibilityLabel = "Shuffle"
+        self.accessibilityValue = "\(secretNumShufflesLeft) Shuffles Left"
+    }
+    private var secretNumShufflesLeft = 0
+    public var numShufflesLeft: Int {
+        set{
+            secretNumShufflesLeft = newValue
+            self.accessibilityValue = "\(secretNumShufflesLeft) Shuffles Left"
+        }
+        get{
+            return secretNumShufflesLeft
+        }
+    
     }
     /*
     // Only override draw() if you perform custom drawing.
