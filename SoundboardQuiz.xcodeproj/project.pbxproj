@@ -10,7 +10,6 @@
 		2A0ACF1829F1A02F001E5D03 /* LevelSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0929F1A02E001E5D03 /* LevelSelectTableViewController.swift */; };
 		2A0ACF1929F1A02F001E5D03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0A29F1A02E001E5D03 /* AppDelegate.swift */; };
 		2A0ACF1B29F1A02F001E5D03 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0C29F1A02E001E5D03 /* Model.xcdatamodeld */; };
-		2A0ACF1C29F1A02F001E5D03 /* LevelSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF0E29F1A02E001E5D03 /* LevelSelectController.swift */; };
 		2A0ACF1E29F1A02F001E5D03 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1029F1A02E001E5D03 /* CategoryTableViewCell.swift */; };
 		2A0ACF2129F1A02F001E5D03 /* SoundboardQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1329F1A02F001E5D03 /* SoundboardQuiz.xcdatamodeld */; };
 		2A0ACF2229F1A02F001E5D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0ACF1529F1A02F001E5D03 /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 		2A2B750D29F2E38D0089DE69 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B750C29F2E38D0089DE69 /* GameViewController.swift */; };
 		2A2B750F29F2F0130089DE69 /* SquareCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B750E29F2F0130089DE69 /* SquareCollectionViewController.swift */; };
 		2A7AF47A2A015F8500AF3E7B /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF4792A015F8500AF3E7B /* HighScoresViewController.swift */; };
-		2A9093D129F71DD3002DBA4F /* BoxContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9093D029F71DD3002DBA4F /* BoxContainerView.swift */; };
 		2A9093D329F72D3D002DBA4F /* ImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9093D229F72D3D002DBA4F /* ImageCollectionView.swift */; };
 		2A9093D529F72D49002DBA4F /* SoundCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9093D429F72D49002DBA4F /* SoundCollectionView.swift */; };
 		2A9093D729F73564002DBA4F /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9093D629F73564002DBA4F /* MainGameViewController.swift */; };
@@ -30,7 +28,6 @@
 		2A9F5AB32A05748F00EA876A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F5AB22A05748F00EA876A /* GradientView.swift */; };
 		2AC1DDC129F6D292001253C3 /* SoundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1DDC029F6D292001253C3 /* SoundCollectionViewCell.swift */; };
 		2AC1DDC329F6D2A8001253C3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1DDC229F6D2A8001253C3 /* ImageCollectionViewCell.swift */; };
-		2AC1DDC929F6E1A2001253C3 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1DDC829F6E1A2001253C3 /* TestTableViewCell.swift */; };
 		2AC744AC29FB1CF5006E0CD7 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC744AB29FB1CF5006E0CD7 /* GameOverViewController.swift */; };
 		2AC744AE29FB2F55006E0CD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AC744AD29FB2F55006E0CD7 /* Images.xcassets */; };
 		2AEE28352A001CA800DEFFAC /* cvxccxvcxv.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28272A001CA800DEFFAC /* cvxccxvcxv.wav */; };
@@ -47,7 +44,6 @@
 		2AEE28402A001CA800DEFFAC /* canada.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28322A001CA800DEFFAC /* canada.wav */; };
 		2AEE28412A001CA800DEFFAC /* werwerrwere.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28332A001CA800DEFFAC /* werwerrwere.wav */; };
 		2AEE28422A001CA800DEFFAC /* hddfailure.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28342A001CA800DEFFAC /* hddfailure.wav */; };
-		2AFCB22C29FACDEA003BD84E /* CellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCB22B29FACDEA003BD84E /* CellObject.swift */; };
 		2AFCB22E29FAD2B5003BD84E /* ShuffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCB22D29FAD2B5003BD84E /* ShuffleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +53,6 @@
 		2A0ACF0A29F1A02E001E5D03 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SoundboardQuiz/AppDelegate.swift; sourceTree = "<group>"; };
 		2A0ACF0B29F1A02E001E5D03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SoundboardQuiz/Info.plist; sourceTree = "<group>"; };
 		2A0ACF0D29F1A02E001E5D03 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		2A0ACF0E29F1A02E001E5D03 /* LevelSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelSelectController.swift; path = SoundboardQuiz/LevelSelectController.swift; sourceTree = "<group>"; };
 		2A0ACF1029F1A02E001E5D03 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = SoundboardQuiz/CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2A0ACF1429F1A02F001E5D03 /* SoundboardQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundboardQuiz.xcdatamodel; sourceTree = "<group>"; };
 		2A0ACF1529F1A02F001E5D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SoundboardQuiz/Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +64,6 @@
 		2A2B750C29F2E38D0089DE69 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = SoundboardQuiz/GameViewController.swift; sourceTree = "<group>"; };
 		2A2B750E29F2F0130089DE69 /* SquareCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SquareCollectionViewController.swift; path = SoundboardQuiz/SquareCollectionViewController.swift; sourceTree = "<group>"; };
 		2A7AF4792A015F8500AF3E7B /* HighScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HighScoresViewController.swift; path = SoundboardQuiz/HighScoresViewController.swift; sourceTree = "<group>"; };
-		2A9093D029F71DD3002DBA4F /* BoxContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoxContainerView.swift; path = SoundboardQuiz/BoxContainerView.swift; sourceTree = "<group>"; };
 		2A9093D229F72D3D002DBA4F /* ImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCollectionView.swift; path = SoundboardQuiz/ImageCollectionView.swift; sourceTree = "<group>"; };
 		2A9093D429F72D49002DBA4F /* SoundCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundCollectionView.swift; path = SoundboardQuiz/SoundCollectionView.swift; sourceTree = "<group>"; };
 		2A9093D629F73564002DBA4F /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainGameViewController.swift; path = SoundboardQuiz/MainGameViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +71,6 @@
 		2A9F5AB22A05748F00EA876A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = SoundboardQuiz/GradientView.swift; sourceTree = "<group>"; };
 		2AC1DDC029F6D292001253C3 /* SoundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundCollectionViewCell.swift; path = SoundboardQuiz/SoundCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AC1DDC229F6D2A8001253C3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = SoundboardQuiz/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		2AC1DDC829F6E1A2001253C3 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		2AC744AB29FB1CF5006E0CD7 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameOverViewController.swift; path = SoundboardQuiz/GameOverViewController.swift; sourceTree = "<group>"; };
 		2AC744AD29FB2F55006E0CD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SoundboardQuiz/Images.xcassets; sourceTree = "<group>"; };
 		2AEE28272A001CA800DEFFAC /* cvxccxvcxv.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cvxccxvcxv.wav; sourceTree = "<group>"; };
@@ -94,7 +87,6 @@
 		2AEE28322A001CA800DEFFAC /* canada.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = canada.wav; sourceTree = "<group>"; };
 		2AEE28332A001CA800DEFFAC /* werwerrwere.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = werwerrwere.wav; sourceTree = "<group>"; };
 		2AEE28342A001CA800DEFFAC /* hddfailure.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hddfailure.wav; sourceTree = "<group>"; };
-		2AFCB22B29FACDEA003BD84E /* CellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CellObject.swift; path = SoundboardQuiz/CellObject.swift; sourceTree = "<group>"; };
 		2AFCB22D29FAD2B5003BD84E /* ShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShuffleView.swift; path = SoundboardQuiz/ShuffleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,14 +106,12 @@
 			children = (
 				2A9F5AB02A02BF0700EA876A /* Sound.swift */,
 				2AEE28262A001CA800DEFFAC /* Sounds */,
-				2AC1DDC829F6E1A2001253C3 /* TestTableViewCell.swift */,
 				2A0ACF0A29F1A02E001E5D03 /* AppDelegate.swift */,
 				2A0ACF2A29F1A63C001E5D03 /* Data */,
 				2A0ACF1529F1A02F001E5D03 /* Assets.xcassets */,
 				2AC744AD29FB2F55006E0CD7 /* Images.xcassets */,
 				2A0ACF1029F1A02E001E5D03 /* CategoryTableViewCell.swift */,
 				2A0ACF0B29F1A02E001E5D03 /* Info.plist */,
-				2A0ACF0E29F1A02E001E5D03 /* LevelSelectController.swift */,
 				2A0ACF0929F1A02E001E5D03 /* LevelSelectTableViewController.swift */,
 				2A0ACF2529F1A0F3001E5D03 /* LaunchScreen.storyboard */,
 				2A0ACF2729F1A107001E5D03 /* Main.storyboard */,
@@ -130,11 +120,9 @@
 				2AC744AB29FB1CF5006E0CD7 /* GameOverViewController.swift */,
 				2AFCB22D29FAD2B5003BD84E /* ShuffleView.swift */,
 				2A9093D629F73564002DBA4F /* MainGameViewController.swift */,
-				2A9093D029F71DD3002DBA4F /* BoxContainerView.swift */,
 				2AC1DDC029F6D292001253C3 /* SoundCollectionViewCell.swift */,
 				2AC1DDC229F6D2A8001253C3 /* ImageCollectionViewCell.swift */,
 				2A2B750E29F2F0130089DE69 /* SquareCollectionViewController.swift */,
-				2AFCB22B29FACDEA003BD84E /* CellObject.swift */,
 				2A9093D229F72D3D002DBA4F /* ImageCollectionView.swift */,
 				2A9093D429F72D49002DBA4F /* SoundCollectionView.swift */,
 				2A2B750C29F2E38D0089DE69 /* GameViewController.swift */,
@@ -279,21 +267,17 @@
 				2A2B750F29F2F0130089DE69 /* SquareCollectionViewController.swift in Sources */,
 				2AC744AC29FB1CF5006E0CD7 /* GameOverViewController.swift in Sources */,
 				2AFCB22E29FAD2B5003BD84E /* ShuffleView.swift in Sources */,
-				2A9093D129F71DD3002DBA4F /* BoxContainerView.swift in Sources */,
 				2A9093D529F72D49002DBA4F /* SoundCollectionView.swift in Sources */,
 				2A9093D329F72D3D002DBA4F /* ImageCollectionView.swift in Sources */,
 				2A7AF47A2A015F8500AF3E7B /* HighScoresViewController.swift in Sources */,
 				2A0ACF1929F1A02F001E5D03 /* AppDelegate.swift in Sources */,
 				2A0ACF1829F1A02F001E5D03 /* LevelSelectTableViewController.swift in Sources */,
 				2AC1DDC129F6D292001253C3 /* SoundCollectionViewCell.swift in Sources */,
-				2AFCB22C29FACDEA003BD84E /* CellObject.swift in Sources */,
 				2AC1DDC329F6D2A8001253C3 /* ImageCollectionViewCell.swift in Sources */,
 				2A2B750D29F2E38D0089DE69 /* GameViewController.swift in Sources */,
 				2A0ACF2129F1A02F001E5D03 /* SoundboardQuiz.xcdatamodeld in Sources */,
-				2A0ACF1C29F1A02F001E5D03 /* LevelSelectController.swift in Sources */,
 				2A0ACF2429F1A02F001E5D03 /* ViewController.swift in Sources */,
 				2A0ACF1B29F1A02F001E5D03 /* Model.xcdatamodeld in Sources */,
-				2AC1DDC929F6E1A2001253C3 /* TestTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
