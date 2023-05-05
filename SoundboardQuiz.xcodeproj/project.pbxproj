@@ -26,24 +26,34 @@
 		2A9093D729F73564002DBA4F /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9093D629F73564002DBA4F /* MainGameViewController.swift */; };
 		2A9F5AB12A02BF0700EA876A /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F5AB02A02BF0700EA876A /* Sound.swift */; };
 		2A9F5AB32A05748F00EA876A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F5AB22A05748F00EA876A /* GradientView.swift */; };
+		2A9F5ABC2A0596C000EA876A /* guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AB42A0596BF00EA876A /* guitar.wav */; };
+		2A9F5ABE2A0596C000EA876A /* cello.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AB62A0596BF00EA876A /* cello.wav */; };
+		2A9F5ABF2A0596C000EA876A /* flute.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AB72A0596BF00EA876A /* flute.wav */; };
+		2A9F5AC02A0596C000EA876A /* trumpet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AB82A0596BF00EA876A /* trumpet.wav */; };
+		2A9F5AC12A0596C000EA876A /* drums.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AB92A0596BF00EA876A /* drums.wav */; };
+		2A9F5AC22A0596C000EA876A /* violin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5ABA2A0596BF00EA876A /* violin.wav */; };
+		2A9F5AC32A0596C000EA876A /* piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5ABB2A0596C000EA876A /* piano.wav */; };
+		2A9F5AC82A05993D00EA876A /* tuba.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AC42A05993D00EA876A /* tuba.mp3 */; };
+		2A9F5AC92A05993D00EA876A /* saxophone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AC52A05993D00EA876A /* saxophone.wav */; };
+		2A9F5ACA2A05993D00EA876A /* clarinet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AC62A05993D00EA876A /* clarinet.wav */; };
+		2A9F5ACB2A05993D00EA876A /* trombone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AC72A05993D00EA876A /* trombone.wav */; };
+		2A9F5ACD2A059A8900EA876A /* harp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5ACC2A059A8900EA876A /* harp.wav */; };
+		2A9F5ADA2A05A46700EA876A /* poland.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5ACE2A05A46700EA876A /* poland.mp3 */; };
+		2A9F5ADB2A05A46700EA876A /* unitedkingdom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5ACF2A05A46700EA876A /* unitedkingdom.mp3 */; };
+		2A9F5ADC2A05A46700EA876A /* mexico.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD02A05A46700EA876A /* mexico.mp3 */; };
+		2A9F5ADD2A05A46700EA876A /* unitedstates.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD12A05A46700EA876A /* unitedstates.mp3 */; };
+		2A9F5ADE2A05A46700EA876A /* canada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD22A05A46700EA876A /* canada.mp3 */; };
+		2A9F5ADF2A05A46700EA876A /* india.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD32A05A46700EA876A /* india.mp3 */; };
+		2A9F5AE02A05A46700EA876A /* germany.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD42A05A46700EA876A /* germany.mp3 */; };
+		2A9F5AE12A05A46700EA876A /* denmark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD52A05A46700EA876A /* denmark.mp3 */; };
+		2A9F5AE22A05A46700EA876A /* ireland.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD62A05A46700EA876A /* ireland.mp3 */; };
+		2A9F5AE32A05A46700EA876A /* brazil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD72A05A46700EA876A /* brazil.mp3 */; };
+		2A9F5AE42A05A46700EA876A /* japan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD82A05A46700EA876A /* japan.mp3 */; };
+		2A9F5AE52A05A46700EA876A /* newzealand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F5AD92A05A46700EA876A /* newzealand.mp3 */; };
 		2AC1DDC129F6D292001253C3 /* SoundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1DDC029F6D292001253C3 /* SoundCollectionViewCell.swift */; };
 		2AC1DDC329F6D2A8001253C3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1DDC229F6D2A8001253C3 /* ImageCollectionViewCell.swift */; };
 		2AC744AC29FB1CF5006E0CD7 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC744AB29FB1CF5006E0CD7 /* GameOverViewController.swift */; };
 		2AC744AE29FB2F55006E0CD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AC744AD29FB2F55006E0CD7 /* Images.xcassets */; };
-		2AEE28352A001CA800DEFFAC /* cvxccxvcxv.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28272A001CA800DEFFAC /* cvxccxvcxv.wav */; };
-		2AEE28362A001CA800DEFFAC /* usa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28282A001CA800DEFFAC /* usa.wav */; };
-		2AEE28372A001CA800DEFFAC /* windows98start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28292A001CA800DEFFAC /* windows98start.wav */; };
-		2AEE28382A001CA800DEFFAC /* clarinet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE282A2A001CA800DEFFAC /* clarinet.wav */; };
-		2AEE28392A001CA800DEFFAC /* robin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE282B2A001CA800DEFFAC /* robin.wav */; };
-		2AEE283A2A001CA800DEFFAC /* 223253.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE282C2A001CA800DEFFAC /* 223253.wav */; };
-		2AEE283B2A001CA800DEFFAC /* uiouiouiouio.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE282D2A001CA800DEFFAC /* uiouiouiouio.wav */; };
-		2AEE283C2A001CA800DEFFAC /* swallow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE282E2A001CA800DEFFAC /* swallow.wav */; };
-		2AEE283D2A001CA800DEFFAC /* trombone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE282F2A001CA800DEFFAC /* trombone.wav */; };
-		2AEE283E2A001CA800DEFFAC /* saxophone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28302A001CA800DEFFAC /* saxophone.wav */; };
-		2AEE283F2A001CA800DEFFAC /* tuba.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28312A001CA800DEFFAC /* tuba.wav */; };
-		2AEE28402A001CA800DEFFAC /* canada.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28322A001CA800DEFFAC /* canada.wav */; };
-		2AEE28412A001CA800DEFFAC /* werwerrwere.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28332A001CA800DEFFAC /* werwerrwere.wav */; };
-		2AEE28422A001CA800DEFFAC /* hddfailure.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE28342A001CA800DEFFAC /* hddfailure.wav */; };
 		2AFCB22E29FAD2B5003BD84E /* ShuffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCB22D29FAD2B5003BD84E /* ShuffleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,24 +79,34 @@
 		2A9093D629F73564002DBA4F /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainGameViewController.swift; path = SoundboardQuiz/MainGameViewController.swift; sourceTree = "<group>"; };
 		2A9F5AB02A02BF0700EA876A /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = SoundboardQuiz/Sound.swift; sourceTree = "<group>"; };
 		2A9F5AB22A05748F00EA876A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = SoundboardQuiz/GradientView.swift; sourceTree = "<group>"; };
+		2A9F5AB42A0596BF00EA876A /* guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guitar.wav; sourceTree = "<group>"; };
+		2A9F5AB62A0596BF00EA876A /* cello.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cello.wav; sourceTree = "<group>"; };
+		2A9F5AB72A0596BF00EA876A /* flute.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flute.wav; sourceTree = "<group>"; };
+		2A9F5AB82A0596BF00EA876A /* trumpet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trumpet.wav; sourceTree = "<group>"; };
+		2A9F5AB92A0596BF00EA876A /* drums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drums.wav; sourceTree = "<group>"; };
+		2A9F5ABA2A0596BF00EA876A /* violin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = violin.wav; sourceTree = "<group>"; };
+		2A9F5ABB2A0596C000EA876A /* piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piano.wav; sourceTree = "<group>"; };
+		2A9F5AC42A05993D00EA876A /* tuba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tuba.mp3; sourceTree = "<group>"; };
+		2A9F5AC52A05993D00EA876A /* saxophone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = saxophone.wav; sourceTree = "<group>"; };
+		2A9F5AC62A05993D00EA876A /* clarinet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clarinet.wav; sourceTree = "<group>"; };
+		2A9F5AC72A05993D00EA876A /* trombone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trombone.wav; sourceTree = "<group>"; };
+		2A9F5ACC2A059A8900EA876A /* harp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = harp.wav; sourceTree = "<group>"; };
+		2A9F5ACE2A05A46700EA876A /* poland.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poland.mp3; sourceTree = "<group>"; };
+		2A9F5ACF2A05A46700EA876A /* unitedkingdom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = unitedkingdom.mp3; sourceTree = "<group>"; };
+		2A9F5AD02A05A46700EA876A /* mexico.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mexico.mp3; sourceTree = "<group>"; };
+		2A9F5AD12A05A46700EA876A /* unitedstates.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = unitedstates.mp3; sourceTree = "<group>"; };
+		2A9F5AD22A05A46700EA876A /* canada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = canada.mp3; sourceTree = "<group>"; };
+		2A9F5AD32A05A46700EA876A /* india.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = india.mp3; sourceTree = "<group>"; };
+		2A9F5AD42A05A46700EA876A /* germany.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = germany.mp3; sourceTree = "<group>"; };
+		2A9F5AD52A05A46700EA876A /* denmark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = denmark.mp3; sourceTree = "<group>"; };
+		2A9F5AD62A05A46700EA876A /* ireland.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ireland.mp3; sourceTree = "<group>"; };
+		2A9F5AD72A05A46700EA876A /* brazil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = brazil.mp3; sourceTree = "<group>"; };
+		2A9F5AD82A05A46700EA876A /* japan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = japan.mp3; sourceTree = "<group>"; };
+		2A9F5AD92A05A46700EA876A /* newzealand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newzealand.mp3; sourceTree = "<group>"; };
 		2AC1DDC029F6D292001253C3 /* SoundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundCollectionViewCell.swift; path = SoundboardQuiz/SoundCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AC1DDC229F6D2A8001253C3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = SoundboardQuiz/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AC744AB29FB1CF5006E0CD7 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameOverViewController.swift; path = SoundboardQuiz/GameOverViewController.swift; sourceTree = "<group>"; };
 		2AC744AD29FB2F55006E0CD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SoundboardQuiz/Images.xcassets; sourceTree = "<group>"; };
-		2AEE28272A001CA800DEFFAC /* cvxccxvcxv.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cvxccxvcxv.wav; sourceTree = "<group>"; };
-		2AEE28282A001CA800DEFFAC /* usa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = usa.wav; sourceTree = "<group>"; };
-		2AEE28292A001CA800DEFFAC /* windows98start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = windows98start.wav; sourceTree = "<group>"; };
-		2AEE282A2A001CA800DEFFAC /* clarinet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clarinet.wav; sourceTree = "<group>"; };
-		2AEE282B2A001CA800DEFFAC /* robin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robin.wav; sourceTree = "<group>"; };
-		2AEE282C2A001CA800DEFFAC /* 223253.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 223253.wav; sourceTree = "<group>"; };
-		2AEE282D2A001CA800DEFFAC /* uiouiouiouio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = uiouiouiouio.wav; sourceTree = "<group>"; };
-		2AEE282E2A001CA800DEFFAC /* swallow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swallow.wav; sourceTree = "<group>"; };
-		2AEE282F2A001CA800DEFFAC /* trombone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trombone.wav; sourceTree = "<group>"; };
-		2AEE28302A001CA800DEFFAC /* saxophone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = saxophone.wav; sourceTree = "<group>"; };
-		2AEE28312A001CA800DEFFAC /* tuba.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tuba.wav; sourceTree = "<group>"; };
-		2AEE28322A001CA800DEFFAC /* canada.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = canada.wav; sourceTree = "<group>"; };
-		2AEE28332A001CA800DEFFAC /* werwerrwere.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = werwerrwere.wav; sourceTree = "<group>"; };
-		2AEE28342A001CA800DEFFAC /* hddfailure.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hddfailure.wav; sourceTree = "<group>"; };
 		2AFCB22D29FAD2B5003BD84E /* ShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShuffleView.swift; path = SoundboardQuiz/ShuffleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,20 +173,30 @@
 		2AEE28262A001CA800DEFFAC /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				2AEE28272A001CA800DEFFAC /* cvxccxvcxv.wav */,
-				2AEE28282A001CA800DEFFAC /* usa.wav */,
-				2AEE28292A001CA800DEFFAC /* windows98start.wav */,
-				2AEE282A2A001CA800DEFFAC /* clarinet.wav */,
-				2AEE282B2A001CA800DEFFAC /* robin.wav */,
-				2AEE282C2A001CA800DEFFAC /* 223253.wav */,
-				2AEE282D2A001CA800DEFFAC /* uiouiouiouio.wav */,
-				2AEE282E2A001CA800DEFFAC /* swallow.wav */,
-				2AEE282F2A001CA800DEFFAC /* trombone.wav */,
-				2AEE28302A001CA800DEFFAC /* saxophone.wav */,
-				2AEE28312A001CA800DEFFAC /* tuba.wav */,
-				2AEE28322A001CA800DEFFAC /* canada.wav */,
-				2AEE28332A001CA800DEFFAC /* werwerrwere.wav */,
-				2AEE28342A001CA800DEFFAC /* hddfailure.wav */,
+				2A9F5AD72A05A46700EA876A /* brazil.mp3 */,
+				2A9F5AD22A05A46700EA876A /* canada.mp3 */,
+				2A9F5AD52A05A46700EA876A /* denmark.mp3 */,
+				2A9F5AD42A05A46700EA876A /* germany.mp3 */,
+				2A9F5AD32A05A46700EA876A /* india.mp3 */,
+				2A9F5AD62A05A46700EA876A /* ireland.mp3 */,
+				2A9F5AD82A05A46700EA876A /* japan.mp3 */,
+				2A9F5AD02A05A46700EA876A /* mexico.mp3 */,
+				2A9F5AD92A05A46700EA876A /* newzealand.mp3 */,
+				2A9F5ACE2A05A46700EA876A /* poland.mp3 */,
+				2A9F5ACF2A05A46700EA876A /* unitedkingdom.mp3 */,
+				2A9F5AD12A05A46700EA876A /* unitedstates.mp3 */,
+				2A9F5ACC2A059A8900EA876A /* harp.wav */,
+				2A9F5AC62A05993D00EA876A /* clarinet.wav */,
+				2A9F5AC52A05993D00EA876A /* saxophone.wav */,
+				2A9F5AC72A05993D00EA876A /* trombone.wav */,
+				2A9F5AC42A05993D00EA876A /* tuba.mp3 */,
+				2A9F5AB62A0596BF00EA876A /* cello.wav */,
+				2A9F5AB92A0596BF00EA876A /* drums.wav */,
+				2A9F5AB72A0596BF00EA876A /* flute.wav */,
+				2A9F5AB42A0596BF00EA876A /* guitar.wav */,
+				2A9F5ABB2A0596C000EA876A /* piano.wav */,
+				2A9F5AB82A0596BF00EA876A /* trumpet.wav */,
+				2A9F5ABA2A0596BF00EA876A /* violin.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -230,25 +260,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AEE283F2A001CA800DEFFAC /* tuba.wav in Resources */,
-				2AEE283E2A001CA800DEFFAC /* saxophone.wav in Resources */,
-				2AEE28372A001CA800DEFFAC /* windows98start.wav in Resources */,
-				2AEE28422A001CA800DEFFAC /* hddfailure.wav in Resources */,
+				2A9F5AC92A05993D00EA876A /* saxophone.wav in Resources */,
+				2A9F5AC12A0596C000EA876A /* drums.wav in Resources */,
 				2A0ACF2829F1A107001E5D03 /* Main.storyboard in Resources */,
-				2AEE283D2A001CA800DEFFAC /* trombone.wav in Resources */,
+				2A9F5AE12A05A46700EA876A /* denmark.mp3 in Resources */,
+				2A9F5ACB2A05993D00EA876A /* trombone.wav in Resources */,
 				2A0ACF2629F1A0F3001E5D03 /* LaunchScreen.storyboard in Resources */,
-				2AEE28412A001CA800DEFFAC /* werwerrwere.wav in Resources */,
-				2AEE28392A001CA800DEFFAC /* robin.wav in Resources */,
-				2AEE283B2A001CA800DEFFAC /* uiouiouiouio.wav in Resources */,
-				2AEE28352A001CA800DEFFAC /* cvxccxvcxv.wav in Resources */,
-				2AEE28382A001CA800DEFFAC /* clarinet.wav in Resources */,
+				2A9F5ADC2A05A46700EA876A /* mexico.mp3 in Resources */,
+				2A9F5AC22A0596C000EA876A /* violin.wav in Resources */,
+				2A9F5AE32A05A46700EA876A /* brazil.mp3 in Resources */,
+				2A9F5AE52A05A46700EA876A /* newzealand.mp3 in Resources */,
+				2A9F5ABE2A0596C000EA876A /* cello.wav in Resources */,
+				2A9F5ABF2A0596C000EA876A /* flute.wav in Resources */,
+				2A9F5AC82A05993D00EA876A /* tuba.mp3 in Resources */,
+				2A9F5ABC2A0596C000EA876A /* guitar.wav in Resources */,
+				2A9F5AE42A05A46700EA876A /* japan.mp3 in Resources */,
+				2A9F5ACD2A059A8900EA876A /* harp.wav in Resources */,
+				2A9F5AE02A05A46700EA876A /* germany.mp3 in Resources */,
 				2AC744AE29FB2F55006E0CD7 /* Images.xcassets in Resources */,
+				2A9F5ACA2A05993D00EA876A /* clarinet.wav in Resources */,
+				2A9F5ADE2A05A46700EA876A /* canada.mp3 in Resources */,
+				2A9F5AC02A0596C000EA876A /* trumpet.wav in Resources */,
+				2A9F5ADB2A05A46700EA876A /* unitedkingdom.mp3 in Resources */,
+				2A9F5ADD2A05A46700EA876A /* unitedstates.mp3 in Resources */,
+				2A9F5ADF2A05A46700EA876A /* india.mp3 in Resources */,
+				2A9F5ADA2A05A46700EA876A /* poland.mp3 in Resources */,
+				2A9F5AE22A05A46700EA876A /* ireland.mp3 in Resources */,
 				2A0ACF2229F1A02F001E5D03 /* Assets.xcassets in Resources */,
 				2A0ACF2C29F1A66E001E5D03 /* PreloadedData.plist in Resources */,
-				2AEE283C2A001CA800DEFFAC /* swallow.wav in Resources */,
-				2AEE28362A001CA800DEFFAC /* usa.wav in Resources */,
-				2AEE283A2A001CA800DEFFAC /* 223253.wav in Resources */,
-				2AEE28402A001CA800DEFFAC /* canada.wav in Resources */,
+				2A9F5AC32A0596C000EA876A /* piano.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +452,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,7 +481,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -413,8 +413,8 @@
                                     <action selector="mainMenuPressed:" destination="5mH-T7-Cgi" eventType="touchUpInside" id="TRZ-Gy-Hr6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: -1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZC-yI-DHl">
-                                <rect key="frame" x="139" y="443" width="116" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: -1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZC-yI-DHl">
+                                <rect key="frame" x="0.0" y="443" width="393" height="76"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -425,11 +425,11 @@
                         <constraints>
                             <constraint firstItem="aSw-39-Hao" firstAttribute="trailing" secondItem="Xoe-7m-2Ga" secondAttribute="trailing" constant="22" id="Dtg-Ju-JPG"/>
                             <constraint firstItem="Xoe-7m-2Ga" firstAttribute="leading" secondItem="aSw-39-Hao" secondAttribute="leading" constant="22" id="EL3-tx-wr5"/>
+                            <constraint firstItem="aZC-yI-DHl" firstAttribute="leading" secondItem="aSw-39-Hao" secondAttribute="leading" id="FyX-LD-7fa"/>
                             <constraint firstItem="Xoe-7m-2Ga" firstAttribute="top" secondItem="aSw-39-Hao" secondAttribute="top" constant="213" id="M0q-km-v4w"/>
-                            <constraint firstItem="aZC-yI-DHl" firstAttribute="leading" secondItem="aSw-39-Hao" secondAttribute="leading" constant="139" id="Mzg-I8-wx7"/>
                             <constraint firstItem="aSw-39-Hao" firstAttribute="trailing" secondItem="GGs-E4-Kal" secondAttribute="trailing" constant="142" id="QGj-l5-9cr"/>
                             <constraint firstItem="GGs-E4-Kal" firstAttribute="leading" secondItem="aSw-39-Hao" secondAttribute="leading" constant="143" id="XzD-NO-ynS"/>
-                            <constraint firstItem="aSw-39-Hao" firstAttribute="trailing" secondItem="aZC-yI-DHl" secondAttribute="trailing" constant="138" id="q3M-03-UU7"/>
+                            <constraint firstItem="aZC-yI-DHl" firstAttribute="width" secondItem="KWn-3S-AeE" secondAttribute="width" id="qnK-Gy-eyv"/>
                             <constraint firstItem="GGs-E4-Kal" firstAttribute="top" secondItem="aZC-yI-DHl" secondAttribute="bottom" constant="61" id="rKS-Og-oue"/>
                             <constraint firstItem="aZC-yI-DHl" firstAttribute="top" secondItem="Xoe-7m-2Ga" secondAttribute="bottom" constant="62" id="syP-5v-Bl1"/>
                         </constraints>
@@ -450,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VWD-7r-l90" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5607" y="263"/>
+            <point key="canvasLocation" x="5606.8702290076335" y="261.97183098591552"/>
         </scene>
         <!--Square Collection View Controller-->
         <scene sceneID="ww2-dg-ROi">
@@ -515,7 +515,7 @@
             <objects>
                 <collectionViewController id="20M-bQ-Faq" customClass="SquareCollectionViewController" customModule="SoundboardQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="H9J-Zp-WjD" customClass="SoundCollectionView" customModule="SoundboardQuiz" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="160.33333333333334" height="552"/>
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="552"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="0.0" id="ENa-04-gY6">

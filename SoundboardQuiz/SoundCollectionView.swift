@@ -48,13 +48,26 @@ class SoundCollectionView: UICollectionView, AVAudioPlayerDelegate {
         }
         guard let path = Bundle.main.path(forResource: name, ofType: nil) else {
             print("Invalid sound path, cannot create sound. Name: \(name)")
-            return }
+            player?.stop()
+            return;
+            
+        }
         let url = URL(fileURLWithPath: path)
 
         do {
             cell.playButtonImage.image = UIImage(systemName: "stop.fill")
             player = try AVAudioPlayer(contentsOf: url)
+//            if(player?.url == nil){
+//                return;
+//            }
+//            if FileManager.default.fileExists(atPath: player?.url?.path ?? "") {
+//                print("FILE AVAILABLE")
+//            } else {
+//                print("FILE NOT AVAILABLE")
+//                return
+//            }
             player?.delegate = self
+            player?.volume = 0.5
             player?.play()
             
         } catch let error {

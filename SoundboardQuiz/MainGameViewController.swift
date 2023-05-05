@@ -24,6 +24,7 @@ class MainGameViewController: UIViewController {
     var categoryName: String?
     var sounds: Set<Sound>?
     var subSounds: [Sound]?
+    var didGameOver = false
     //try sounds = (self.parent as! MainGameViewController).subSounds?.sorted(by: {(firstSound, secondSound) throws -> Bool in return firstSound.name ?? "" > secondSound.name ?? ""})
     func setCategoryInfo(catName: String, sounds: NSSet) -> () {
         categoryName = catName
@@ -163,6 +164,8 @@ class MainGameViewController: UIViewController {
             self.embeddedViewController2 = vc
         }else if let vc = segue.destination as? GameOverViewController{
             print("NOW ENTERING GAME OVER!")
+            didGameOver = true
+            self.embeddedViewController1.stopSound(forName: nil)
             if let categoryName, let sounds{
                 vc.setInfo(categoryName: categoryName, sounds: (sounds as NSSet), score: score)
             }
@@ -219,6 +222,10 @@ class MainGameViewController: UIViewController {
     public static func attemptSaveState() throws {
         print("ATTEMPTING TO SAVE STATE!")
         if let currentInstance{
+            if(currentInstance.didGameOver){
+                print("Garbage collector didn't pick this up yet, not saving state")
+                return
+            }
             print("INSTANCE FOUND!")
             let possibleData = currentInstance.saveState()
             let defaults = UserDefaults.standard

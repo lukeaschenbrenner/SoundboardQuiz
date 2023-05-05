@@ -562,7 +562,7 @@ class SquareCollectionViewController: UICollectionViewController, UICollectionVi
         cgPath.addArc(tangent1End: botRightPt, tangent2End: botLeftPt, radius: 20)
         cgPath.addLine(to: botLeftPt)
         cgPath.addArc(tangent1End: botLeftPt, tangent2End: topLeftPoint, radius: 20)
-
+//https://stackoverflow.com/questions/69005480/how-i-can-rounded-corners-uibezierpath
         let bezierPath = UIBezierPath(cgPath: cgPath)
         
         previewParameters.visiblePath = bezierPath //UIBezierPath(rect: CGRect(x: 25, y: 25, width: 120, height: 120))

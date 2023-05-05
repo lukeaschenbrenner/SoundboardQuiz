@@ -9,8 +9,6 @@ import UIKit
 
 class ShuffleView: UIView {
 
-
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.accessibilityTraits = UIAccessibilityTraits.button

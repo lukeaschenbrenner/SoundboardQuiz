@@ -75,6 +75,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let preloadedDataKey = "didPreloadData"
         let userDefaults = UserDefaults.standard
         if(userDefaults.bool(forKey: preloadedDataKey) == false || manualLoadDataFromPlist){
+            //Delete persistent store before re-populating
+//            let coordinator = persistentContainer.persistentStoreCoordinator
+//            for store in coordinator.persistentStores where store.url != nil {
+//                try? coordinator.remove(store)
+//                try? FileManager.default.removeItem(atPath: store.url!.path)
+//            }
+            // create the delete request for the specified entity
+//            let fetchRequest: NSFetchRequest<NSFetchRequestResult> = SoundCategory.fetchRequest()
+//            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+//
+//            // get reference to the persistent container
+//            let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+//
+//            // perform the delete
+//            do {
+//                try persistentContainer.viewContext.execute(deleteRequest)
+//            } catch {
+//                print(error.localizedDescription)
+//            }
             
             userDefaults.set(true, forKey: preloadedDataKey)
             guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "plist")
@@ -86,6 +105,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let backgroundContext = persistentContainer.newBackgroundContext()
             persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+            
+
 
             let arrayContents = try NSArray(contentsOf: urlPath, error: ())
                 //as? [Dictionary<Key: String, Dictionary<Key: >>]

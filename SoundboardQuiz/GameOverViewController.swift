@@ -50,7 +50,7 @@ class GameOverViewController: UIViewController {
                         }else{
                             return false
                         }
-                    }) || highScoresArr.count <= 0){
+                    }) || highScoresArr.count < 5){
                         print("The score is greater than at least one previous high score. Creating new array")
                         /*
                          let bookiesData = try! PropertyListEncoder().encode(bookies)
