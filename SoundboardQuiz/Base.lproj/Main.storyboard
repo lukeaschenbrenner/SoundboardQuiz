@@ -333,8 +333,8 @@
                                     <outletCollection property="gestureRecognizers" destination="u1t-e4-zR7" appends="YES" id="o1A-17-X4J"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 10000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yp5-VI-CkV">
-                                <rect key="frame" x="145.66666666666666" y="126" width="101.66666666666666" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 10000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yp5-VI-CkV">
+                                <rect key="frame" x="121" y="126" width="151" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -348,11 +348,12 @@
                             <constraint firstItem="tVM-2t-eum" firstAttribute="top" secondItem="yp5-VI-CkV" secondAttribute="bottom" constant="32" id="3Ve-dV-fSR"/>
                             <constraint firstItem="CeK-06-gX6" firstAttribute="leading" secondItem="csc-yf-t0A" secondAttribute="leading" constant="77" id="3iL-ZF-XcW"/>
                             <constraint firstItem="csc-yf-t0A" firstAttribute="trailing" secondItem="tVM-2t-eum" secondAttribute="trailing" constant="23" id="3v7-su-YDg"/>
+                            <constraint firstItem="yp5-VI-CkV" firstAttribute="leading" secondItem="csc-yf-t0A" secondAttribute="leading" constant="121" id="4Dg-n9-P1o"/>
                             <constraint firstItem="yp5-VI-CkV" firstAttribute="top" secondItem="csc-yf-t0A" secondAttribute="top" constant="23" id="4fx-NO-PKe"/>
                             <constraint firstItem="csc-yf-t0A" firstAttribute="trailing" secondItem="CeK-06-gX6" secondAttribute="trailing" constant="78" id="CUb-2A-Mw3"/>
                             <constraint firstItem="csc-yf-t0A" firstAttribute="bottom" secondItem="tVM-2t-eum" secondAttribute="bottom" constant="87" id="FDq-JZ-Feo"/>
-                            <constraint firstItem="yp5-VI-CkV" firstAttribute="leading" secondItem="csc-yf-t0A" secondAttribute="leading" constant="145.66666666666666" id="IBR-04-klB"/>
                             <constraint firstItem="89A-kF-OLT" firstAttribute="height" secondItem="tVM-2t-eum" secondAttribute="height" id="MM2-Rb-Hzl"/>
+                            <constraint firstItem="csc-yf-t0A" firstAttribute="trailing" secondItem="yp5-VI-CkV" secondAttribute="trailing" constant="121" id="Pkq-xL-5mS"/>
                             <constraint firstItem="CeK-06-gX6" firstAttribute="top" secondItem="89A-kF-OLT" secondAttribute="bottom" constant="30" id="UxU-gv-rVI"/>
                             <constraint firstItem="89A-kF-OLT" firstAttribute="leading" secondItem="csc-yf-t0A" secondAttribute="leading" constant="16" id="Vmc-JC-9gT"/>
                             <constraint firstItem="89A-kF-OLT" firstAttribute="top" secondItem="yp5-VI-CkV" secondAttribute="bottom" constant="32" id="Xfb-Pf-TKE"/>
@@ -360,7 +361,6 @@
                             <constraint firstItem="89A-kF-OLT" firstAttribute="top" secondItem="csc-yf-t0A" secondAttribute="top" constant="76" id="gDH-PA-75i"/>
                             <constraint firstItem="csc-yf-t0A" firstAttribute="bottom" secondItem="CeK-06-gX6" secondAttribute="bottom" id="nr8-9C-RBZ"/>
                             <constraint firstItem="csc-yf-t0A" firstAttribute="bottom" secondItem="89A-kF-OLT" secondAttribute="bottom" constant="87" id="uT4-Sl-7aE"/>
-                            <constraint firstItem="csc-yf-t0A" firstAttribute="trailing" secondItem="yp5-VI-CkV" secondAttribute="trailing" constant="145.66666666666669" id="wqx-TW-pje"/>
                             <constraint firstItem="CeK-06-gX6" firstAttribute="top" secondItem="tVM-2t-eum" secondAttribute="bottom" constant="30" id="zNx-gS-0Lr"/>
                         </constraints>
                     </view>
@@ -381,7 +381,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4295" y="218"/>
+            <point key="canvasLocation" x="4293.8931297709923" y="217.60563380281693"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="0NE-ly-DJo">
